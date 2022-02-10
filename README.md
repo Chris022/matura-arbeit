@@ -1,10 +1,16 @@
-# matura-arbeit
-Matura Arbeit
+# markdown-writer
+Kann genutzt werden um wissenschaftliche arbeiten in Markdown zu schreiben.
+For now only works on windows
+
+### Requirements
+Um dieses Tool zu nutzen muss
+pandoc installiert werden: https://pandoc.org/installing.html
+lualatex installiert werden: https://miktex.org/howto/install-miktex
 
 ### Wie man an dieser Arbeit schreibt
 #### Ordnerstruktur
 ```
-matura-arbeit
+markdown-writer
 │   README.md
 │   compiler.py
 │   config.json
