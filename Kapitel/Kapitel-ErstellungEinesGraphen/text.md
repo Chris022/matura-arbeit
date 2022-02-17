@@ -21,19 +21,17 @@ Ist ein Konstrukt welches eine Liste von besuchten Koordinaten mitführt. Bei je
 
 ![Beschreibung eines Richtungs-Gradienten](.\Dateien\RichtungsGradient.png) 
 
-### Problem
+## Problem
 Für eine Leichtere Verarbeitung/Bearbeitung sollte das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein sogenannter Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert wurde diese Datenstruktur gewählt.
 
-### Idee
+## Idee
 Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung, Pixel für Pixel verfolgt werden.
 
 ![Unterschiedliche Typen von Vertices](.\Dateien\SchaltungBild1.png){width=50%}
 
 So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
 
-### Umsetzung
-
-### Beschreibung der Grundstruktur des Algorithmus
+## Umsetzung
 
 ![Blockschaltbild des rekursiven teils des Algorithmus](.\Dateien\AlgorithmusBlockschaltbild.png){width=70%}
 
@@ -41,7 +39,7 @@ So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je ein
 
 ![Der von oben generierte Graph bei den einzelnen Zwischenschritten](.\Dateien\AlgorithmusBild2.png){width=60%}
 
-### Algorithmus in Text Form
+## Algorithmus
 
 Der Graph wird nach folgendem Algorithmus generiert.
 
