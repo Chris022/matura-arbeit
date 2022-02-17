@@ -13,6 +13,10 @@ header-includes: |
     \pagestyle{fancy}
     \setlength\headheight{20pt}
     \rhead{Doc generator}
+    \usepackage{float}
+    \floatplacement{figure}{H}
+    \floatplacement{table}{H}
+    \lstset{frame = single}
 ---
 
 
