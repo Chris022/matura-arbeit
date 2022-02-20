@@ -56,6 +56,38 @@ Das Selbe wird mit der gezeichneten Schaltung gemacht.
 Durch diese Information können dann selbe Nummern zusammen geordnet werden und richtig verbunden werden.
 Speichere diese Information in die einzelnen Bauteil Vertices.
 
-
+![Graph mit Verbindungen gespeichert. In diesem Fall durch die gepunkteten Linien dargestellt](.\Dateien\ConnectionMap.png){width=40%}
 
 ---
+
+Für jeden Bauteil-Vertex, füge den passenden LT-Spice Code in ein Output-File hinzu. Die Koordinaten entsprechen dabei den, in dem Vertex gespeicherten.
+
+![Widerstand wird als Text in das Output-File gespeichert](.\Dateien\LT-SpicePicture1.png){width=40%}
+
+Für jeden Verbindungs-Vertex, füge den WIRE LT-Spice Code in das Output-File hinzu.
+
+![Verbindungen zwischen den Bauteilen werden in das Output-File geschrieben](.\Dateien\LT-SpicePicture2.png){width=40%}
+
+\newpage
+
+**Problem:** Treffen 2 Bauteile direkt aufeinander  
+
+![Beispiel für eine problematische Schaltung](.\Dateien\Problem1.png){width=40%}
+
+Eine solche Schaltung würde einen solchen Graphen erzeugen.
+
+![Gepunktete Linien stellen zuvor genannte Verbindungen dar](.\Dateien\Problem2.png){width=40%}
+
+Mit der Beschreibung von oben hätte eine solche Schaltung jedoch keine Verbindung zwischen den beiden Widerständen, da ja dort kein Verbindungs-Vertex ist.
+
+**Lösung:**
+
+Sollte einer der Vertices mit denen ein Bauteil verbunden wird, ein weiterer Bauteil-Vertex sein, füge ein WIRE vom Anschluss des Bauteils bis zur Mitte, zwischen den beiden Bauteilen ein!
+
+![Schritt 1](.\Dateien\Lösung1.png){width=40%}
+
+Das selbe wird auch für den zweiten Widerstand gemacht.
+
+![Schritt 2](.\Dateien\Lösung2.png){width=40%}
+
+Die Lösung mit einer Linie nur bis zu Mitte der beiden Bauteile, wurde gewählt, da ein Bauteil somit nicht wissen muss, welches Bauteil sein Nachbar ist.
