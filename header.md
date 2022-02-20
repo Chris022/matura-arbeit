@@ -17,6 +17,7 @@ header-includes: |
     \floatplacement{figure}{H}
     \floatplacement{table}{H}
     \lstset{frame = single}
+    \renewcommand{\figurename}{Abbildung}
 ---
 
 
