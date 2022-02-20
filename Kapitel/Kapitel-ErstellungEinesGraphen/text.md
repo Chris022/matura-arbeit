@@ -1,20 +1,6 @@
 # Umwandeln der Schaltung in eine Graph Datenstruktur
 
 ## Begriffe
-### Graph
-Ein Graph ist eine Sonderform einer Baum-Datenstruktur.
-
-![Beispiel für einen Graphen](.\Dateien\GraphBild1.png)
-
-Sie besteht aus sogenannten "Vertices" und "Edges".
-
-![Bestandsteile eines Graphen](.\Dateien\GraphBild2.png)
-
-Wobei je ein Vertex einen Datenpunkt repräsentiert,welcher mithilfe einer Edge mit anderen Datenpunkten verbunden ist. Jeder Vertex und jede Edge kann auch noch eine bestimmte Farbe haben. So kann zwischen zwei Strukturen, die zwar strukturell gleich sind, aber je andere Dinge darstellen unterschieden werden.
-
-![Strukturell gleiche Graphen, welche sich lediglich durch die Farbe unterscheiden](.\Dateien\GraphBild3.png) 
-
-In jedem Vertex können hierbei auch unterschiedliche Daten, wie zum Beispiel: Koordinaten gespeichert werden, diese unterscheiden zwei Graphen allerdings **nicht** von einander!
 
 ### Richtungs-Gradient
 Ist ein Konstrukt welches eine Liste von besuchten Koordinaten mitführt. Bei jeder neu hinzugefügten Koordinate wird die Richtung der letzten N Koordinaten geprüft. Sollte diese Richtung durchschnittlich eine andere sein als jene zu vor, wir eine Richtungsänderung erkannt!
