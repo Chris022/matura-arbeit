@@ -13,9 +13,10 @@ Für eine Leichtere Verarbeitung/Bearbeitung sollte das Bild der Schaltung in ei
 ## Idee
 Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung, Pixel für Pixel verfolgt werden.
 
+So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
+
 ![Unterschiedliche Typen von Vertices](.\Dateien\SchaltungBild1.png){width=50%}
 
-So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
 
 ## Umsetzung
 
