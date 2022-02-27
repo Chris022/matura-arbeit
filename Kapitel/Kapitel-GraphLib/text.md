@@ -11,18 +11,18 @@ Sie besteht aus sogenannten "Vertices"(Singular Vertex) und "Edges".
 
 ![Bestandsteile eines Graphen](.\Dateien\GraphBild2.png)
 
-Wobei je ein Vertex einen Datenpunkt repräsentiert,welcher mithilfe einer Edge mit anderen Datenpunkten verbunden ist. Jeder Vertex und jede Edge kann auch noch eine bestimmte Farbe haben. So kann zwischen zwei Strukturen, die zwar strukturell gleich sind, aber je andere Dinge darstellen unterschieden werden.
+Wobei je ein Vertex einen Datenpunkt repräsentiert,welcher mithilfe einer Edge mit anderen Datenpunkten verbunden ist. Jeder Vertex und jede Edge kann auch noch eine bestimmte Farbe haben. So kann zwischen zwei Strukturen, die zwar strukturell gleich sind, aber je andere Dinge darstellen, unterschieden werden.
 
 ![Strukturell gleiche Graphen, welche sich lediglich durch die Farbe unterscheiden](.\Dateien\GraphBild3.png) 
 
 In jedem Vertex können hierbei auch unterschiedliche Daten, wie zum Beispiel: Koordinaten gespeichert werden, diese unterscheiden zwei Graphen allerdings **nicht** von einander!
 
 ## Problem
-Es muss eine Möglichkeit geschaffen werden Graphen zu be- und verarbeiten. Nur so können alle folgenden Schritte einfach und effektiv umgesetzt werden.
+Die Gesammte elektronische Schaltung soll später mithilfe eines Graphen dargestellt werden. Dafür ist es nötig eine Möglichkeit zu schaffen, sehr einfach Graphen zu erstellen und diese weiter zu verarbeiten.
 
 ## Idee
 Eine einfache Bibliothek finden/erstellen.
-Diese Bibliothek muss folgende Funktionen bieten:  
+Diese Bibliothek muss mindestens folgende Funktionen bieten:  
 
 * Graphen erstellen
 * Graphen Zeichnen
@@ -48,7 +48,7 @@ Diese Bibliothek muss folgende Funktionen bieten:
 ## Umsetzung
 
 ### iGraph (Bibliothek)
-Zuerst wurde die Bibliothek Graph.io verwendet um mit Graphen zu arbeiten. Ausgewählt wurde dies aufgrund der Verfügbarkeit der Funktion `get_isomorphisms_vf2()`. Diese kann schnell und zuverlässig Muster in Graphen finden.(siehe Erklärung zuvor)  
+Zuerst wurde die Bibliothek iGraph verwendet um mit Graphen zu arbeiten. Ausgewählt wurde dies aufgrund der Verfügbarkeit der Funktion `get_isomorphisms_vf2()`. Diese kann schnell und zuverlässig Muster in Graphen finden.(siehe Erklärung zuvor)  
 
 
 **Problem:**
@@ -63,12 +63,12 @@ Zuerst wurde die Bibliothek Graph.io verwendet um mit Graphen zu arbeiten. Ausge
 
 **Lösung:**
 
-Selbst eine Bibliothek entwickeln welche die Probleme von "iGraph", im Austausch zur Geschwindigkeit, beheben. Da die Bibliothek selber in Python entwickelt wurde, ist sie, besonders die äquivalente Funktion zu `get_isomorphisms_vf2()`, nämlich sehr langsam.
+Selbst eine Bibliothek entwickeln welche die Probleme von "iGraph" behebt. Da die Bibliothek selber in Python entwickelt wurde, ist sie allerdings relativ langsam, was in diesem Fall jedoch nicht sonderlich stört.
 
 
 **Implementation:**
 
-Im Hintergrund wird ein Graph mithilfe einer Inzidenzmatrix, einer Liste aus Vertex-Objekten und einer Liste aus Edge-Objekten gespeichert.
+Im Hintergrund wird ein Graph mithilfe einer Inzidenzmatrix gespeichert.
 Eine Inzidenzmatrix ist hierbei eine Tabelle deren Reihe je einen Vertex und deren Spalten je eine Edge beschreiben.
 
 ![Beispiel für eine Inzidenzmatrix \label{inzidenzmatrix}](.\Dateien\MatrixErklärung.png){width=70%}
@@ -77,17 +77,18 @@ In Beispiel \ref{inzidenzmatrix} sieht man: Vertex "1" ist mit der Edge "1" verb
 
 Zum Zeichnen der Graphen wird ein Graph aus unserer Library zuerst in ein xml-encodiertes Text-Dokument umgewandelt. Dieses Dokument wird dann mithilfe von iGraph geöffnet und mit den dadurch zur Verfügung gestellten Funktionen gezeichnet. Dies wurde gemacht da es wesentlich einfach ist, als einen Graph-Zeichen-Algorithmus zu implementieren.
 
-### Wichtige Algorithmen:
+### Weitere wichtige Algorithmen:
 
 #### Muster finden:  
 
-Verwendet wurde der so genannte "Ulman's Subgraph Isomorphism Algorithm". Dieser basiert auf darauf, dass grundsätzlich alle Möglichkeiten durchprobiert werden wobei immer im Vorhinein möglichst viele Optionen ausgeschlossen werden!
-Ein Muster nennt man hierbe, mit Fachausdruck auch Subgraph. 
+Verwendet wurde der so genannte "Ulman's Subgraph Isomorphism Algorithm". Dieser basiert darauf, dass alle Möglichkeiten durchprobiert werden, bis alle Vorkommen eines Musters in einem Ausgangsgraphen gefunden wurden.
 
 
 *Beschreibung des grund-Algorithmus:*
 
-Sei H der große Graph und N ein zweiter Graph der in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
+TODO!! Beschreiben was eine Zuordnung ist!!
+
+Sei H ein Graph und N ein zweiter Graph,das Muster,welches in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
 
 ![Beispiel für 2 Graphen](.\Dateien\Isomothism1.png){width=70%}
 
@@ -95,48 +96,48 @@ Sei H der große Graph und N ein zweiter Graph der in H gefunden werden soll. H 
 
 ![Leere Matrix für die oben gezeigten Beispiele](.\Dateien\Isomothism2.png){width=20%}
 
-In dieser Matrix bezeichnet eine 1 an der stelle x,y dann dass: der Vertex y in H auf den Vertex x in N passt
+In dieser Matrix bezeichnet eine 1 an der stelle x,y dann dass: der Vertex x in H dem Vertex y in N zugeordnet wird
 
-![In diesem Fall ist Vertex 1 in N zu Vertex 2 in H geordnet](.\Dateien\Isomothism3.png){width=50%}
+![In diesem Fall ist Vertex 1 in N, Vertex 2 in H zugeordnet](.\Dateien\Isomothism3.png){width=50%}
 
-2\) Befülle die Matrix an allen stellen mit 1, in denen eine Zuordnung möglich wäre. Also für jeden Vertex aus H prüfe für jeden Vertex aus N ob eine Zuordnung möglich wäre und setzte jene Stelle in der Matrix zu 1. Für die Überprüfung verwende unten beschriebenen Algorithmus zur "Überprüfung der Zuordnungbarkeit" 
+2\) Befülle die Matrix an allen stellen mit 1, an denen eine Zuordnung möglich wäre. Das bedeutet (x,y) ist 1 wenn Vertex x in H Vertex y in N zugeordnet werden kann! Für die Überprüfung siehe "Beschreibung des Algorithmus zur Prüfung ob es sich um eine mögliche Zuordnung handelt"
 
-3\) Starte mit der ersten Reihe und keiner besuchten Spalte
+3\) Starte in der ersten Reihe der Matrix und mit noch keiner besuchten Spalte.
 
-4\) Prüfe in der gesamten Tabelle pro Spalte **maximal** eine 1 steht und pro Zeile **genau** eine 1 steht. Das heißt jeder Vertex in N ist genau einem Vertex in H zugeordnet.
+4\) Prüfe ob in der gesamten Tabelle pro Spalte **maximal** eine 1 steht und pro Zeile **genau** eine 1 steht. Das heißt jeder Vertex in N ist genau einem Vertex in H zugeordnet.
 
 Wenn Ja)
-> Prüfe ob die generierte Zuordnung auch einen möglichen Subgraphen generiert(laut Algorithmus später). Speichere die Zuordnung wenn ja
+> Prüfe ob die generierte Zuordnung auch einen mögliche Zuordnung ist siehe "Beischreibung der Überprüfung ob es sich um einen möglichen Subgraphen handelt" .Wenn ja, speichere die Zuordnung.
 
 ![Beispiel für eine unmögliche Zuordnung](.\Dateien\Isomothism4.png){width=40%}
 
 Wenn Nein) 
 
-5\) Erstelle Kopie der Tabelle
+5\) Erstelle eine Kopie der Tabelle
 
-6\) Für jede noch nicht besuchte Spalte:
+6\) Für jede noch nicht besuchte Spalte, besuche Spalte:
 
-   1\) Prüfe ob der Wert in der Tabelle an der derzeitigen Reihe und gerade besuchten Spalte 1 is. Wenn nicht überspringe die Spalte
+   1\) Prüfe ob der Wert in der Tabelle an der derzeitigen Reihe und gerade besuchten Spalte 1 is. Wenn nein, überspringe die Spalte
 
-   2\) Setze in der derzeitigen Reihe die besuchte Spalte zu 1 den Rest zu 0
+   2\) Sei die derzeit besuchte Spalte x und die derzeit besuchte Reiche y, setze (x,y) zu 1
 
    3\) Wiederhole ab Schritt 3) mit:
 
    * Reihe+1
-   * Besuchte Spalten + gerade besuchter
+   * Besuchte Spalten + gerade besuchter Spalte
    * Kopie der Tabelle
 
    3\) Setze die Tabelle wieder zurück
 
 
-![Beispieldurchgang für einen Stark vereinfachten Graphen und ohne Überprüfung ob es sich um eine mögliche Zuordnung handelt! Außerdem beginnt dieser Algorithmus mit einer ganz leeren Matrix anstelle einer bereits zum teil gefüllten! Es wird dementsprechend also auch Schritt 1) ausgelassen](.\Dateien\BeschreibungDurchgangBasicSubisomorphismAlgorithm.png)
+![Beispieldurchgang für einen stark vereinfachten Graphen. In diesem Beispiel beginnt der Algorithmus mit einer ganz leeren Matrix anstelle einer bereits zum teil gefüllten! Es wird dementsprechend also auch Schritt 2) ausgelassen](.\Dateien\BeschreibungDurchgangBasicSubisomorphismAlgorithm.png)
 
 ***
 
 *Beschreibung des Algorithmus zur Prüfung ob es sich um eine mögliche Zuordnung handelt*  
 
-Prüfe ob ein Vertex aus H die gleiche Farbe wie der aus N hat. Wenn nicht -> keine Zuordnung möglich  
-Prüfe ob der sogenannte "degree" des Vertex aus H größer gleich dem aus N ist. Der "degree" beschreibt hierbei die Anzahl an Nachbarn die ein Vertex hat. Hat nu ein Vertex in H nur 2 Nachbarn, einer in N aber 3, so werden die zwei Vertices niemals zuordenbar werden!
+Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn beide nicht die gleiche Farbe haben -> keine Zuordnung möglich 
+Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn der Vertex aus H weniger Nachbarn hat als der aus N -> keine Zuordnung möglich!
 
 ![1 und 1 werden nie zuordenbar sein, da sie unterschiedliche Farbe haben und H1 nur einen Nachbar hat, N1 aber mindestens zwei benötigt](.\Dateien\Zuordnungsbarkeit.png){width=50%}
 
@@ -144,22 +145,27 @@ Prüfe ob der sogenannte "degree" des Vertex aus H größer gleich dem aus N ist
 
 *Beschreibung der Verbesserung*  
 
-Da der Algorithmus wie er oben beschrieben ist noch extrem langsam ist, gibt es einen zusätzlichen Schritt zwischen 4) und 5) um einige zuordnungs Möglichkeiten dirket auszuschließen! Dies geschieht dadurch, dass gewisse Zellen in der Tabelle zu 0 gemacht werden und somit in weitere Folge übersprungen werden.
+Da der Algorithmus wie er oben beschrieben ist noch extrem langsam ist, gibt es einen zusätzlichen Schritt zwischen 4) und 5) um einige Zuordnungen dirket auszuschließen!
 
-Dafür werden für jede Zelle die Nachbarn des entsprechenden N-Vertex geholt.
-Genau so werden für jede Zelle die Nachbarn des entsprechenden H-Vertex geholt.
-Ein Zuordnen ist nur möglich wenn alle Nachbarn des N-Vertex auch zuweisbar auf mindestens einen Nachbar des H-Vertex sind!
+Für jeden Vertex in N, suche den zugeordneten Vertex aus H.
+Suche die Nachbarn für beide Vertices.
+Für jeden Nachbar des N-Vertex suche dessen zugeordneten H-Vertex. Nur wenn mindestens einer davon auch ein Nachbar des ursprünglichen Vertex aus H ist, ist eine Zuordnung möglich
+
+
+TODO!!! IMPROVE!!!
+
+
 Dies wird solange wiederholt bis die Matrix nicht mehr verändert wurde.
 
 ![Einzelne Wiederholung des Vereinfachungs-Algorithmus](.\Dateien\AlgorithmusSimplyfiy.png){width=60%}
 
 ***
 
-*Beischreibung der Überprüfung ob es sich um einen möglichen Subgraphen handelt*  
+*Beischreibung der Überprüfung ob es sich um eine mögliche Zuordnung handelt*  
 
-Die Idee ist folgende: Es wird aus einer Zuordnung und aus dem Graphen H ein neuer Graph generiert. Ist dieser Graph gleich dem Graphen N, so handelt es sich um einen validen Subgraphen!
+Die Idee ist folgende: Es wird aus einer Zuordnung und aus dem Graphen H ein neuer Graph generiert. Ist dieser Graph gleich dem Graphen N, so handelt es sich um eine valide Zuordnung!
 
-Dafür werden die Graphen H und N in eine Adjacency-Matrix umgewandelt. Anschließend rechnet man: $$M(MH)^T == N$$ wobei M die Zuordnungsmatrix ist
+Dafür werden die Graphen H und N in eine sogennante Adjacency-Matrix umgewandelt. Anschließend rechnet man: $$M(MH)^T == N$$ wobei M die Zuordnungsmatrix ist
 
 Graphisch representiert diese Rechnung folgendes:
 
