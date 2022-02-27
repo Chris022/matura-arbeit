@@ -79,12 +79,15 @@ Zum Zeichnen der Graphen wird ein Graph aus unserer Library zuerst in ein xml-en
 
 ### Wichtige Algorithmen:
 
-**Muster finden:**
+#### Muster finden:  
+
 Verwendet wurde der so genannte "Ulman's Subgraph Isomorphism Algorithm". Dieser basiert auf darauf, dass grundsätzlich alle Möglichkeiten durchprobiert werden wobei immer im Vorhinein möglichst viele Optionen ausgeschlossen werden!
+Ein Muster nennt man hierbe, mit Fachausdruck auch Subgraph. 
+
 
 *Beschreibung des grund-Algorithmus:*
 
-Sein ein Graph H der große Graph und ein zweiter Graph N der Graph der in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
+Sei H der große Graph und N ein zweiter Graph der in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
 
 ![Beispiel für 2 Graphen](.\Dateien\Isomothism1.png){width=70%}
 
@@ -96,24 +99,28 @@ In dieser Matrix bezeichnet eine 1 an der stelle x,y dann dass: der Vertex y in 
 
 ![In diesem Fall ist Vertex 1 in N zu Vertex 2 in H geordnet](.\Dateien\Isomothism3.png){width=50%}
 
-2\) Starte mit der ersten Reihe und keiner besuchten Spalte
+2\) Befülle die Matrix an allen stellen mit 1, in denen eine Zuordnung möglich wäre. Also für jeden Vertex aus H prüfe für jeden Vertex aus N ob eine Zuordnung möglich wäre und setzte jene Stelle in der Matrix zu 1. Für die Überprüfung verwende unten beschriebenen Algorithmus zur "Überprüfung der Zuordnungbarkeit" 
 
-3\) Prüfe in der gesamten Tabelle pro Spalte **maximal** eine 1 steht und pro Zeile **genau** eine 1 steht. Das heißt jeder Vertex in N ist genau einem Vertex in H zugeordnet.
+3\) Starte mit der ersten Reihe und keiner besuchten Spalte
+
+4\) Prüfe in der gesamten Tabelle pro Spalte **maximal** eine 1 steht und pro Zeile **genau** eine 1 steht. Das heißt jeder Vertex in N ist genau einem Vertex in H zugeordnet.
 
 Wenn Ja)
-> Prüfe ob die generierte Zuordnung auch eine mögliche Zuordnung ist und speichere diese, wenn ja!
+> Prüfe ob die generierte Zuordnung auch einen möglichen Subgraphen generiert(laut Algorithmus später). Speichere die Zuordnung wenn ja
 
 ![Beispiel für eine unmögliche Zuordnung](.\Dateien\Isomothism4.png){width=40%}
 
 Wenn Nein) 
 
-4\) Erstelle Kopie der Tabelle
+5\) Erstelle Kopie der Tabelle
 
-5\) Für jede noch nicht besuchte Spalte:
+6\) Für jede noch nicht besuchte Spalte:
 
-   1\) Setze in der derzeitigen Reihe die besuchte Spalte zu 1
+   1\) Prüfe ob der Wert in der Tabelle an der derzeitigen Reihe und gerade besuchten Spalte 1 is. Wenn nicht überspringe die Spalte
 
-   2\) Wiederhole ab Schritt 3) mit:
+   2\) Setze in der derzeitigen Reihe die besuchte Spalte zu 1 den Rest zu 0
+
+   3\) Wiederhole ab Schritt 3) mit:
 
    * Reihe+1
    * Besuchte Spalten + gerade besuchter
@@ -122,5 +129,62 @@ Wenn Nein)
    3\) Setze die Tabelle wieder zurück
 
 
-![Beispieldurchgang für einen Stark vereinfachten Graphen und ohne Überprüfung ob es sich um eine mögliche Zuordnung handelt!](.\Dateien\BeschreibungDurchgangBasicSubisomorphismAlgorithm.png)
+![Beispieldurchgang für einen Stark vereinfachten Graphen und ohne Überprüfung ob es sich um eine mögliche Zuordnung handelt! Außerdem beginnt dieser Algorithmus mit einer ganz leeren Matrix anstelle einer bereits zum teil gefüllten! Es wird dementsprechend also auch Schritt 1) ausgelassen](.\Dateien\BeschreibungDurchgangBasicSubisomorphismAlgorithm.png)
 
+***
+
+*Beschreibung des Algorithmus zur Prüfung ob es sich um eine mögliche Zuordnung handelt*  
+
+Prüfe ob ein Vertex aus H die gleiche Farbe wie der aus N hat. Wenn nicht -> keine Zuordnung möglich  
+Prüfe ob der sogenannte "degree" des Vertex aus H größer gleich dem aus N ist. Der "degree" beschreibt hierbei die Anzahl an Nachbarn die ein Vertex hat. Hat nu ein Vertex in H nur 2 Nachbarn, einer in N aber 3, so werden die zwei Vertices niemals zuordenbar werden!
+
+![1 und 1 werden nie zuordenbar sein, da sie unterschiedliche Farbe haben und H1 nur einen Nachbar hat, N1 aber mindestens zwei benötigt](.\Dateien\Zuordnungsbarkeit.png){width=50%}
+
+***
+
+*Beschreibung der Verbesserung*  
+
+Da der Algorithmus wie er oben beschrieben ist noch extrem langsam ist, gibt es einen zusätzlichen Schritt zwischen 4) und 5) um einige zuordnungs Möglichkeiten dirket auszuschließen! Dies geschieht dadurch, dass gewisse Zellen in der Tabelle zu 0 gemacht werden und somit in weitere Folge übersprungen werden.
+
+Dafür werden für jede Zelle die Nachbarn des entsprechenden N-Vertex geholt.
+Genau so werden für jede Zelle die Nachbarn des entsprechenden H-Vertex geholt.
+Ein Zuordnen ist nur möglich wenn alle Nachbarn des N-Vertex auch zuweisbar auf mindestens einen Nachbar des H-Vertex sind!
+Dies wird solange wiederholt bis die Matrix nicht mehr verändert wurde.
+
+![Einzelne Wiederholung des Vereinfachungs-Algorithmus](.\Dateien\AlgorithmusSimplyfiy.png){width=60%}
+
+***
+
+*Beischreibung der Überprüfung ob es sich um einen möglichen Subgraphen handelt*  
+
+Die Idee ist folgende: Es wird aus einer Zuordnung und aus dem Graphen H ein neuer Graph generiert. Ist dieser Graph gleich dem Graphen N, so handelt es sich um einen validen Subgraphen!
+
+Dafür werden die Graphen H und N in eine Adjacency-Matrix umgewandelt. Anschließend rechnet man: $$M(MH)^T == N$$ wobei M die Zuordnungsmatrix ist
+
+Graphisch representiert diese Rechnung folgendes:
+
+![Beispiel Graphen](.\Dateien\isValidSumgraph0.png){width=50%}
+
+Schritt 1
+
+![Alle Verbindungen nach 1 werden ausgetauscht mit Verbindungen nach Zuweisung(1) = 1](.\Dateien\isValidSumgraph1.png){width=30%}
+
+Schritt 2
+
+![Alle Verbinungen nach 2 werden mit Verbindungen nach Zuweisung(2) = None](.\Dateien\isValidSumgraph2.png){width=30%}
+
+Schritt 3
+
+![Alle Verbinungen nach 3 werden mit Verbindungen nach Zuweisung(3) = 2](.\Dateien\isValidSumgraph3.png){width=30%}
+
+Schritt 4
+
+![Alle Verbinungen nach 4 werden mit Verbindungen nach Zuweisung(4) = None](.\Dateien\isValidSumgraph4.png){width=30%}
+
+Schritt 5
+
+![Alle Vertices die nicht in N vorkommen werden entfernt](.\Dateien\isValidSumgraph5.png){width=15%}
+
+Schritt 6
+
+![Sind die Geraphen gleich?](.\Dateien\isValidSumgraph6.png){width=50%}
