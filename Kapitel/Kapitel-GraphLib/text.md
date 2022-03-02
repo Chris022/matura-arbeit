@@ -70,25 +70,29 @@ Selbst eine Bibliothek entwickeln welche die Probleme von "iGraph" behebt. Da di
 
 Im Hintergrund wird ein Graph mithilfe einer Inzidenzmatrix gespeichert.
 Eine Inzidenzmatrix ist hierbei eine Tabelle deren Reihe je einen Vertex und deren Spalten je eine Edge beschreiben.
+Eine 1 bei der Edge y und bei dem Vertex x heißt dann einfach, der Vertex x ist mit der Edge y verbunden.
 
 ![Beispiel für eine Inzidenzmatrix \label{inzidenzmatrix}](.\Dateien\MatrixErklärung.png){width=70%}
 
 In Beispiel \ref{inzidenzmatrix} sieht man: Vertex "1" ist mit der Edge "1" verbunden. Vertex "2" ist mit Edge "1","2","3" verbunden.
 
-Zum Zeichnen der Graphen wird ein Graph aus unserer Library zuerst in ein xml-encodiertes Text-Dokument umgewandelt. Dieses Dokument wird dann mithilfe von iGraph geöffnet und mit den dadurch zur Verfügung gestellten Funktionen gezeichnet. Dies wurde gemacht da es wesentlich einfach ist, als einen Graph-Zeichen-Algorithmus zu implementieren.
-
 ### Weitere wichtige Algorithmen:
+
+#### Zeichnen: 
+
+Zum Zeichnen der Graphen wird ein Graph aus unserer Library zuerst in ein xml-encodiertes Text-Dokument umgewandelt. Dieses Dokument wird dann mithilfe von iGraph geöffnet und mit den dadurch zur Verfügung gestellten Funktionen gezeichnet. Dies wurde gemacht da es wesentlich einfach ist, als einen Graph-Zeichen-Algorithmus zu implementieren.
 
 #### Muster finden:  
 
 Verwendet wurde der so genannte "Ulman's Subgraph Isomorphism Algorithm". Dieser basiert darauf, dass alle Möglichkeiten durchprobiert werden, bis alle Vorkommen eines Musters in einem Ausgangsgraphen gefunden wurden.
 
+Eine wichtige Rolle spielen hierbei sogenannte "Zuordnungen". Eine Zuordnung ist dabei einfach eine Matrix, welche alle Vertices aus einem Graphen, je einen anderen Vertex aus einem anderen Graphen zuordnet.
 
-*Beschreibung des grund-Algorithmus:*
+![Beispiel für eine Zuordnung. Die jeweiligen Zuordnungen sind gepunktet dargestellt](.\Dateien\Zuordnung.png){width=70%}
 
-TODO!! Beschreiben was eine Zuordnung ist!!
+*Beschreibung des Grund-Algorithmus:*
 
-Sei H ein Graph und N ein zweiter Graph,das Muster,welches in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
+Sei H ein Graph und N das Muster welches in H gefunden werden soll. H besteht aus |V_H| Vertices und N aus |V_N| Vertices
 
 ![Beispiel für 2 Graphen](.\Dateien\Isomothism1.png){width=70%}
 
@@ -100,46 +104,34 @@ In dieser Matrix bezeichnet eine 1 an der stelle x,y dann dass: der Vertex x in 
 
 ![In diesem Fall ist Vertex 1 in N, Vertex 2 in H zugeordnet](.\Dateien\Isomothism3.png){width=50%}
 
-2\) Befülle die Matrix an allen stellen mit 1, an denen eine Zuordnung möglich wäre. Das bedeutet (x,y) ist 1 wenn Vertex x in H Vertex y in N zugeordnet werden kann! Für die Überprüfung siehe "Beschreibung des Algorithmus zur Prüfung ob es sich um eine mögliche Zuordnung handelt"
+2\) Befülle die Matrix an allen stellen mit 1, an denen eine Zuordnung möglich ist. Das bedeutet (x,y) ist 1 wenn Vertex x in H einem Vertex y in N zugeordnet werden kann! Für die Überprüfung siehe Algorithmus: \ref{möglicheZuordnung}
 
 3\) Starte in der ersten Reihe der Matrix und mit noch keiner besuchten Spalte.
 
 4\) Prüfe ob in der gesamten Tabelle pro Spalte **maximal** eine 1 steht und pro Zeile **genau** eine 1 steht. Das heißt jeder Vertex in N ist genau einem Vertex in H zugeordnet.
 
 Wenn Ja)
-> Prüfe ob die generierte Zuordnung auch einen mögliche Zuordnung ist siehe "Beischreibung der Überprüfung ob es sich um einen möglichen Subgraphen handelt" .Wenn ja, speichere die Zuordnung.
-
-![Beispiel für eine unmögliche Zuordnung](.\Dateien\Isomothism4.png){width=40%}
-
+>Wenn die generierte Zuordnung auch eine mögliche ist, speicher sie. Für Algorithmus siehe \ref{validIsomophism}
 Wenn Nein) 
 
-5\) Erstelle eine Kopie der Tabelle
+5\) Erstelle eine Kopie der Matrix
 
 6\) Für jede noch nicht besuchte Spalte, besuche Spalte:
 
-   1\) Prüfe ob der Wert in der Tabelle an der derzeitigen Reihe und gerade besuchten Spalte 1 is. Wenn nein, überspringe die Spalte
+6.1\) Prüfe ob der Wert in der Matrix an der derzeitigen Reihe und gerade besuchten Spalte 1 is. Wenn nein, überspringe die Spalte
 
-   2\) Sei die derzeit besuchte Spalte x und die derzeit besuchte Reiche y, setze (x,y) zu 1
+6.2\) Sei die derzeit besuchte Spalte x und die derzeit besuchte Reiche y, setze (x,y) zu 1
 
-   3\) Wiederhole ab Schritt 3) mit:
+6.3\) Wiederhole ab Schritt 3) mit:
 
    * Reihe+1
    * Besuchte Spalten + gerade besuchter Spalte
    * Kopie der Tabelle
 
-   3\) Setze die Tabelle wieder zurück
+6.4\) Setze die Tabelle wieder zurück
 
 
 ![Beispieldurchgang für einen stark vereinfachten Graphen. In diesem Beispiel beginnt der Algorithmus mit einer ganz leeren Matrix anstelle einer bereits zum teil gefüllten! Es wird dementsprechend also auch Schritt 2) ausgelassen](.\Dateien\BeschreibungDurchgangBasicSubisomorphismAlgorithm.png)
-
-***
-
-*Beschreibung des Algorithmus zur Prüfung ob es sich um eine mögliche Zuordnung handelt*  
-
-Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn beide nicht die gleiche Farbe haben -> keine Zuordnung möglich 
-Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn der Vertex aus H weniger Nachbarn hat als der aus N -> keine Zuordnung möglich!
-
-![1 und 1 werden nie zuordenbar sein, da sie unterschiedliche Farbe haben und H1 nur einen Nachbar hat, N1 aber mindestens zwei benötigt](.\Dateien\Zuordnungsbarkeit.png){width=50%}
 
 ***
 
@@ -147,23 +139,42 @@ Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn der Vertex au
 
 Da der Algorithmus wie er oben beschrieben ist noch extrem langsam ist, gibt es einen zusätzlichen Schritt zwischen 4) und 5) um einige Zuordnungen dirket auszuschließen!
 
+![Beispiel für überprüfung. Die Zuordnung ist dabei gepunktet](.\Dateien\Vereinfachung0.png){width=60%}
+
 Für jeden Vertex in N, suche den zugeordneten Vertex aus H.
+
+![Suche den Zugeordneten Vertex für 1](.\Dateien\Vereinfachung1.png){width=60%}
+
 Suche die Nachbarn für beide Vertices.
-Für jeden Nachbar des N-Vertex suche dessen zugeordneten H-Vertex. Nur wenn mindestens einer davon auch ein Nachbar des ursprünglichen Vertex aus H ist, ist eine Zuordnung möglich
 
+![Suche die Nachbarn (hier grau)](.\Dateien\Vereinfachung2.png){width=60%}
 
-TODO!!! IMPROVE!!!
+Für jeden Nachbar des N-Vertex suche dessen zugeordneten H-Vertex.
+Nur wenn mindestens einer davon auch ein Nachbar des ursprünglichen Vertex aus H ist, ist eine Zuordnung möglich
+
+![Zuordnung von 1 auf 2 ist in diesem Fall somit möglich!](.\Dateien\Vereinfachung3.png){width=60%}
 
 
 Dies wird solange wiederholt bis die Matrix nicht mehr verändert wurde.
 
-![Einzelne Wiederholung des Vereinfachungs-Algorithmus](.\Dateien\AlgorithmusSimplyfiy.png){width=60%}
 
 ***
 
-*Beischreibung der Überprüfung ob es sich um eine mögliche Zuordnung handelt*  
+*Beschreibung des Algorithmus zur Prüfung ob eine Zuordnung möglich ist \label{möglicheZuordnung}*  
+
+Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn beide nicht die gleiche Farbe haben -> keine Zuordnung möglich  
+Suche für jeden Vertex aus N, den zugeordneten Vertex aus H. Wenn der Vertex aus H weniger Nachbarn hat als der aus N -> keine Zuordnung möglich!
+
+![1 und 1 werden nie zuordenbar sein, da sie unterschiedliche Farbe haben und H1 nur einen Nachbar hat, N1 aber mindestens zwei benötigt](.\Dateien\Zuordnungsbarkeit.png){width=50%}
+
+***
+
+
+*Beischreibung der Überprüfung ob es sich um eine mögliche Zuordnung handelt \label{validIsomophism}*  
 
 Die Idee ist folgende: Es wird aus einer Zuordnung und aus dem Graphen H ein neuer Graph generiert. Ist dieser Graph gleich dem Graphen N, so handelt es sich um eine valide Zuordnung!
+
+![Beispiel für eine unmögliche Zuordnung](.\Dateien\Isomothism4.png){width=40%}
 
 Dafür werden die Graphen H und N in eine sogennante Adjacency-Matrix umgewandelt. Anschließend rechnet man: $$M(MH)^T == N$$ wobei M die Zuordnungsmatrix ist
 
