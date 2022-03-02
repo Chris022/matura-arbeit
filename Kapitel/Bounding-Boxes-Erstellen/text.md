@@ -14,4 +14,14 @@ Im Graphen, ist jedes Bauteil relativ leicht anhand seines Musters zu idendifizi
 
 ![Muster für einen Widerstand im Graphen](.\Dateien\MusterWiderstand.png)
 
-Mithilfe der Muster-Findungs-Funktion die unsere Graph Bibliothek zur Verfügung stellt, können die Muster dann sehr leicht gefunden werden. Wichtig ist, dass es in diesem Schritt lediglich wichtig ist, die Position der Bauteile zu finden, nicht die art des Bauteils.
+Mithilfe der Muster-Findungs-Funktion die unsere Graph Bibliothek zur Verfügung stellt, können die Muster dann sehr leicht gefunden werden. Da in jedem Vertex dann noch seine Koordinaten im Bild gespeichert sind, können dann sehr leicht sogenannte Bounding Boxes erstellt werden.Wichtig ist, dass es in diesem Schritt lediglich wichtig ist, die Position der Bauteile zu finden, nicht die art des Bauteils.
+
+![Beispielschaltung mit eingezeichneten Boundingboxen](.\Dateien\boundingboxes.png){width=50%}
+
+**Wichtig** ist, dass um manche Bauteile (besonders Kondensatoren) zu erkennen, zuerst der Graph noch modifiziert werden muss. Ein Kondensator würde ohne diese Modifikation aussehen, wie 2 Ground symbole.
+
+![Muster eines Ground Symboles(links) und eines Kondensators(rechts)](.\Dateien\KondensatorGndMuster.png){width=50%}
+
+Im Falle eines Kondensators, wird geprüft, ob zwei Ground Symbole direkt gegenüber von einander stehen. Sollte dies der Fall sein, wird der Graph so verändert, dass ein Kondensator eindeutig identivizierbar ist.
+
+![Die Veränderung des Kondensator Musters](.\Dateien\VeraenderungKondensator.png){width=50%}
