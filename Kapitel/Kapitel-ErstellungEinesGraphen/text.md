@@ -3,12 +3,12 @@
 ## Begriffe
 
 ### Richtungs-Gradient
-Ist ein Konstrukt welches eine Liste von besuchten Koordinaten mitführt. Bei jeder neu hinzugefügten Koordinate wird die Richtung der letzten N Koordinaten geprüft. Sollte diese Richtung durchschnittlich eine andere sein als jene zu vor, wir eine Richtungsänderung erkannt!
+Ist ein Konstrukt, welches eine Liste von besuchten Koordinaten mitführt. Bei jeder neu hinzugefügten Koordinate wird die Richtung der letzten N Koordinaten geprüft. Sollte diese Richtung durchschnittlich eine andere sein als jene zu vor wir eine Richtungsänderung erkannt!
 
 ![Beschreibung eines Richtungs-Gradienten](.\Dateien\RichtungsGradient.png) 
 
 ## Problem
-Für eine Leichtere Verarbeitung/Bearbeitung sollte das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein sogenannter Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert wurde diese Datenstruktur gewählt.
+Für eine leichtere Verarbeitung/Bearbeitung sollte das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert, wurde diese Datenstruktur gewählt. Für eine genauere Beschreibung siehe Kapitel zuvor.
 
 ## Idee
 Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung, Pixel für Pixel verfolgt werden.
@@ -30,7 +30,7 @@ So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je ein
 
 Der Graph wird nach folgendem Algorithmus generiert.
 
-Als Input für den Algorithmus muss ein, laut vorheriger Kapitel bearbeites Bild, als 2D-Array übergeben werden.
+Als Input für den Algorithmus muss ein, laut vorherigen Kapitelen bearbeites Bild, als 2D-Array übergeben werden.
 Richtungsänderungen werden mithilfe eines Richtungs-Gradienten erkannt. Für eine Erklärung siehe Richtungs-Gradient zuvor.
 
 ```
@@ -49,11 +49,11 @@ subroutine "generatePartGraph"(startPoint):
 
 	je nach Anzahl der gefunden Pixel
 	 	1 Nachbar:Endpunkt
-			füge einen Vertex mit der blauen Farbe Hinzu
+			füge einen Vertex mit der blauen Farbe hinzu
 	 	2 Nachbarn:Ein normales Verbindungsstück
-		 	füge einen Vertex mit der pinken Farbe Hinzu
+		 	füge einen Vertex mit der pinken Farbe hinzu
 	 	mehr als 2 Nachbarn:Eine Verzweigung
-			füge einen Vertex mit der pinken Farbe Hinzu
+			füge einen Vertex mit der pinken Farbe hinzu
 
 	rufe die Subroutine "rekursiv" auf mit:
 		currentPixel = startPunkt
@@ -82,13 +82,13 @@ subroutine "rekursiv"(currentPixel,lastPixel,lastGraphNode,directionGradient)
 	je nach Anzahl der Nachbarn:
 		0 Nachbarn: Endpunkt
 			füge einen Endpunkt-Vertex zum Graphen hinzu
-			verbinde diesen mit dem letzt erstellen Vertex
+			verbinde diesen mit dem zuletzt erstellen Vertex
 
 		1 Nachbar: einfache Verbindungslinie
 			prüfe ob der Richtungs-Gradient eine Ecke findet
 				wenn ja ->
 					füge einen Eckpunkt-Vertex  zum Graphen hinzu
-					verbinde diesen mit dem letzt erstellen Vertex
+					verbinde diesen mit dem zuletzt erstellen Vertex
 					rufe die Subroutine "rekursiv" auf mit:
 						currentPixel = Nachbar-Pixel
 						lastPixel = gerade besuchter Pixel
@@ -102,7 +102,7 @@ subroutine "rekursiv"(currentPixel,lastPixel,lastGraphNode,directionGradient)
 						directionGradient = Richtungs-Gradient
 		mehr als 1 Nachbar:
 			füge dem Graphen einen Verzweigungs-Vertex und
-			verbinde diesen mit dem letzt erstellen Vertex
+			verbinde diesen mit dem zuletzt erstellen Vertex
 	
 	        für jeden Nachbar:
 	        	rufe die Subroutine "rekursiv" auf mit:
