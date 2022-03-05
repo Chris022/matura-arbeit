@@ -63,7 +63,7 @@ Zuerst wurde die Bibliothek iGraph verwendet um mit Graphen zu arbeiten. Ausgew�
 
 **Lösung:**
 
-Selbst eine Bibliothek entwickeln welche die Probleme von "iGraph" behebt. Da die Bibliothek selber in Python entwickelt wurde, ist sie allerdings relativ langsam, was in diesem Fall jedoch nicht sonderlich stört.
+Selbst eine Bibliothek entwickeln welche die Probleme von "iGraph" behebt. Da die Bibliothek selber in Python entwickelt wurde, ist sie allerdings relativ langsam, was in diesem Fall jedoch nicht sonderlich stört. IGraph wird dann lediglich wärend der Entwicklung der Software zum Debugen (zeichnen von Graphen) verwedent. 
 
 
 **Implementation:**
@@ -88,7 +88,7 @@ Verwendet wurde der so genannte "Ulman's Subgraph Isomorphism Algorithm". Dieser
 
 Eine wichtige Rolle spielen hierbei sogenannte "Zuordnungen". Eine Zuordnung ist dabei einfach eine Matrix, welche alle Vertices aus einem Graphen, je einen anderen Vertex aus einem anderen Graphen zuordnet.
 
-![Beispiel für eine Zuordnung. Die jeweiligen Zuordnungen sind gepunktet dargestellt](.\Dateien\Zuordnung.png){width=70%}
+![Beispiel für eine von mehreren möglichen eine Zuordnungn. Die jeweiligen Zuordnungen sind gepunktet dargestellt](.\Dateien\Zuordnung.png){width=70%}
 
 *Beschreibung des Grund-Algorithmus:*
 
@@ -180,28 +180,29 @@ Dafür werden die Graphen H und N in eine sogennante Adjacency-Matrix umgewandel
 
 Graphisch representiert diese Rechnung folgendes:
 
-![Beispiel Graphen](.\Dateien\isValidSumgraph0.png){width=50%}
+![Beispiel Graphen](.\Dateien\isValidSumgraph0.png){width=55%}
 
-Schritt 1
+**Schritt 1**
 
-![Alle Verbindungen nach 1 werden ausgetauscht mit Verbindungen nach Zuweisung(1) = 1](.\Dateien\isValidSumgraph1.png){width=30%}
+![Alle Verbindungen nach 1 werden ausgetauscht mit Verbindungen nach Zuweisung(1) = 1](.\Dateien\isValidSumgraph1.png){width=50%}
 
-Schritt 2
+**Schritt 2**
 
-![Alle Verbinungen nach 2 werden mit Verbindungen nach Zuweisung(2) = None](.\Dateien\isValidSumgraph2.png){width=30%}
+![Alle Verbinungen nach 2 werden mit Verbindungen nach Zuweisung(2) = None](.\Dateien\isValidSumgraph2.png){width=50%}
 
-Schritt 3
+**Schritt 3**
 
-![Alle Verbinungen nach 3 werden mit Verbindungen nach Zuweisung(3) = 2](.\Dateien\isValidSumgraph3.png){width=30%}
+![Alle Verbinungen nach 3 werden mit Verbindungen nach Zuweisung(3) = 2](.\Dateien\isValidSumgraph3.png){width=50%}
 
-Schritt 4
+**Schritt 4**
 
-![Alle Verbinungen nach 4 werden mit Verbindungen nach Zuweisung(4) = None](.\Dateien\isValidSumgraph4.png){width=30%}
+![Alle Verbinungen nach 4 werden mit Verbindungen nach Zuweisung(4) = None](.\Dateien\isValidSumgraph4.png){width=50%}
 
-Schritt 5
+**Schritt 5**
 
-![Alle Vertices die nicht in N vorkommen werden entfernt](.\Dateien\isValidSumgraph5.png){width=15%}
+![Alle Vertices die nicht in N vorkommen werden entfernt](.\Dateien\isValidSumgraph5.png){width=35%}
 
-Schritt 6
+\newpage
+**Schritt 6**
 
-![Sind die Geraphen gleich?](.\Dateien\isValidSumgraph6.png){width=50%}
+![Sind die Geraphen gleich?Wenn ja: Zuordnung ist möglich, sonst nicht! In diesem Fall: Zuordnung möglich.](.\Dateien\isValidSumgraph6.png){width=50%}
