@@ -1,12 +1,12 @@
-## Output File erstellen
+# Output File erstellen
 
-### Problem
+## Problem
 Der fertig bearbeitete Graph muss nun in ein vom Simulator "LT-Spice" verständliches Format umgewandelt werden.
 
-### Idee
+## Idee
 Das Format, indem LT-Spice Schaltungen gespeichert werden, ist ein einfaches ASCII-Format. Kann also relativ einfach erstellt werden. Für mehr Information über die Syntax des Files, siehe LT-Spice Syntax
 
-### LT-Spice Syntax  
+## LT-Spice Syntax  
 
 Generelle Informationen über die Version und der Größe des LT-Spice Files
 ```
@@ -35,7 +35,7 @@ Platzierung eines Kabels um Bauteile zu verbinden
 WIRE <x-pos-von> <y-pos-von> <x-pos-to> <y-pos-to>
 ```
 \newpage
-### Umsetzung
+## Umsetzung
 
 Für jedes Bauteil muss festgestellt werden, an welchen Koordinaten es mit dem Bauteil verbunden ist.
 
