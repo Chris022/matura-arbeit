@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg2752"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="SchaltungBild1.svg">
+  <defs
+     id="defs2746" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="185.95574"
+     inkscape:cy="465.11922"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2749">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 61.610118,175.85863 39.923972,0 0.13364,-7.72654 -40.057612,0 z"
+       id="path3297"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 61.610118,175.85863 v 7.01582 l -2.505654,0.0334 5.178348,-0.0334 h -2.672694 z"
+       id="path3299"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ff270a;stroke-width:0.531;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301"
+       cx="61.639034"
+       cy="175.88918"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ff270a;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0"
+       cx="61.639034"
+       cy="182.9093"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#180aff;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0-5"
+       cx="64.244911"
+       cy="182.87592"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#180aff;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0-5-2"
+       cx="59.133385"
+       cy="182.94273"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#fffe0a;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0-5-2-1"
+       cx="61.639034"
+       cy="168.14268"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#fffe0a;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0-5-2-1-8"
+       cx="38.252949"
+       cy="169.61266"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ff270a;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-3"
+       cx="38.252953"
+       cy="172.8867"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#180aff;stroke-width:0.53100002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path3301-0-5-2-5"
+       cx="38.252953"
+       cy="176.42802"
+       rx="0.80163258"
+       ry="0.76390868" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="39.789749"
+       y="170.44786"
+       id="text3410"><tspan
+         sodipodi:role="line"
+         id="tspan3408"
+         x="39.789749"
+         y="170.44786"
+         style="font-size:2.82222223px;stroke-width:0.26458332">Eckpunkt</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="39.77562"
+       y="173.97562"
+       id="text3410-6"><tspan
+         sodipodi:role="line"
+         id="tspan3408-7"
+         x="39.77562"
+         y="173.97562"
+         style="font-size:2.82222223px;stroke-width:0.26458332">Verzweigung</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="39.742207"
+       y="177.51695"
+       id="text3410-6-0"><tspan
+         sodipodi:role="line"
+         id="tspan3408-7-4"
+         x="39.742207"
+         y="177.51695"
+         style="font-size:2.82222223px;stroke-width:0.26458332">Endpunkt</tspan></text>
+  </g>
+</svg>
