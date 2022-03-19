@@ -30,20 +30,20 @@ Diese Bibliothek muss mindestens folgende Funktionen bieten:
 * Vertices löschen
 * Vertices mit Edges verbinden
 * Edges löschen
-* Nachbar-Vertices herausfinden (siehe Abbildung:\ref{nachbarVertices})
-* Vertices gruppieren und durch einen einzelnen Vertex ersetzen (siehe Abbildung:\ref{verticesGruppieren})
-* Einen Vertex zwischen zwei anderen einfügen (siehe Abbildung:\ref{zwischenVertices})
+* Nachbar-Vertices herausfinden (siehe Abbildung:Nachbar-Vertices\ref{nachbarVertices})
+* Vertices gruppieren und durch einen einzelnen Vertex ersetzen (siehe Abbildung:Vertices-Gruppieren\ref{verticesGruppieren})
+* Einen Vertex zwischen zwei anderen einfügen (siehe Abbildung:Zwischen-Vertices\ref{zwischenVertices})
 * Zwei Graphen zusammenfügen
-* Muster in Graphen zu finden (siehe Abbildung:\ref{musterFinden})
+* Muster in Graphen zu finden (siehe Abbildung:Muster-Finden\ref{musterFinden})
 
 
-![\label{nachbarVertices}](.\Dateien\NachbarVertices.png){width=40%}
+![\label{nachbarVertices}Nachbar-Vertices](.\Dateien\NachbarVertices.png){width=40%}
 
-![\label{verticesGruppieren}](.\Dateien\VerticesGruppieren.png){width=40%}
+![\label{verticesGruppieren}Vertices-Gruppieren](.\Dateien\VerticesGruppieren.png){width=40%}
 
-![\label{zwischenVertices}](.\Dateien\VertexZwischeneinfügen.png){width=40%} 
+![\label{zwischenVertices}Zwischen-Vertices](.\Dateien\VertexZwischeneinfügen.png){width=40%} 
 
-![\label{musterFinden}](.\Dateien\MusterFinden.png){width=70%}
+![\label{musterFinden}Muster-Finden](.\Dateien\MusterFinden.png){width=70%}
 
 ## Umsetzung
 
