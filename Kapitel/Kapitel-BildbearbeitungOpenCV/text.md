@@ -8,19 +8,25 @@ Um das Bild der Schaltung weiter verarbeiten zu können, ist es wichtig, alle Li
 
 Mithilfe einer Funktion aus der Paython Library OpenCV soll jede Linien in dem Bild in eine Linie mit einer breite von einem Pixel umgewandeldt werden.
 
-![Binary](.\Dateien\binary.png) ![Thinn](.\Dateien\thinn.png)
+|||
+:-:|:-:
+![Binary](.\Dateien\binary.png){width=40%} | ![Thinn](.\Dateien\thinn.png){width=40%}
 
 ### Problem bei Spulen
 
 Diese Algorithmus funktiuoniert jedoch bei Spulen nicht, da diese für den Algorithmus nur eine breitere Linie wie die Verbindungen zwischen den Bauteilen darstellen und somit auch zu einer ein Pixel breiten Linie geändert werden.
 
-![Binary](.\Dateien\binary.png) ![Thinn ohne Spulen](.\Dateien\thinnOhneSpule.png)
+|||
+:-:|:-:
+![Binary](.\Dateien\binary.png){width=40%} | ![Thinn ohne Spulen](.\Dateien\thinnOhneSpule.png){width=40%}
 
 ### Lösung für Spulen
 
 Um zu verhindern dass Spulen entfernt werden, werden zuerst die schwarzen Flächen in den Spulen entfernt. Spulen haben somit die gleiche Struktur wie Widerstände und können in eine ein Pixel breite Linie umgewandelt werden.
 
-![Binary](.\Dateien\binary.png) ![ohne Spulen](.\Dateien\ohneSpulen.png)
+||||
+:-:|:-:|:-:
+![Binary](.\Dateien\binary.png){width=35%} | ![ohne Spulen](.\Dateien\ohneSpulen.png){width=35%} | ![Thinn](.\Dateien\thinn.png){width=35%}
 
 
 ## Umsetzung
