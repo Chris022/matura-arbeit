@@ -1,6 +1,12 @@
 {
     "titel":"BlaBla",
     "author":"Christoph Weberbauer, Markus Mayrhofer",
-    "kapitel":["Bounding-Boxes-Erstellen"]
+    "kapitel":[
+        "Kapitel-GraphLib",
+        "Kapitel-ErstellungEinesGraphen",
+        "Bounding-Boxes-Erstellen",
+        "Kapitel-UmstruckturierenGraph",
+        "Kapitel-File-Erstellen"
+    ]
     
 }

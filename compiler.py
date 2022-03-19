@@ -10,7 +10,7 @@ wholeMarkdown = ""
 for kapitel in config["kapitel"]:
     md = open("./Kapitel/"+kapitel+"/text.md").read()
     md = md.replace("Dateien\\","Dateien-"+kapitel+"\\")
-    wholeMarkdown += md
+    wholeMarkdown += "\n\n\\newpage\n\n"+ str(md)
     #copy dateien
     copyPDF = "xcopy Kapitel\\"+kapitel+"\\Dateien chache\\Dateien-"+kapitel+" /E/H/Y/i"
     print(copyPDF)
@@ -46,4 +46,4 @@ copyPDF = "copy chache\out.pdf ."
 os.system(copyPDF)
 
 #clear chache
-os.system("rmdir /s /q .\chache")
+#os.system("rmdir /s /q .\chache")
