@@ -2,6 +2,7 @@
     "titel":"BlaBla",
     "author":"Christoph Weberbauer, Markus Mayrhofer",
     "kapitel":[
+        "Einleitung",
         "Kapitel-GraphLib",
         "Kapitel-ErstellungEinesGraphen",
         "Bounding-Boxes-Erstellen",

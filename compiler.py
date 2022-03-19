@@ -46,4 +46,4 @@ copyPDF = "copy chache\out.pdf ."
 os.system(copyPDF)
 
 #clear chache
-#os.system("rmdir /s /q .\chache")
+os.system("rmdir /s /q .\chache")
