@@ -8,11 +8,9 @@ Nachdem alle Bauteile Klassifiziert wurden, muss für jedes Bauteil noch festges
 
 ## Rotationserkennung mit Neuronalem Netzwerk
 
-Dass Neuronale Netzwerk, welches darauf trainiert wurde die Bauteile zu klassifizieren sollte zusätlich noch die Rotation jedes Bauteils herausfinden.
+Dass Neuronale Netzwerk, welches darauf trainiert wurde, die Bauteile zu klassifizieren soll zusätlich noch die Rotation jedes Bauteils herausfinden.
 
-Genauer?
-
-Diese Mehtode der Rotationserkennung war jedoch sehr ungenau, weshaöb eine andere Methode gewählt wurde.
+Diese Mehtode der Rotationserkennung war jedoch sehr ungenau, weshalb eine andere Methode gewählt wurde.
 
 
 ## Umsetzung 
