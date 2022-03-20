@@ -14,6 +14,6 @@ In dem Bild der Schaltung werden diese bestimmten Muster gesucht und so verände
 
 Jedes Muster welches erestzt werden soll wird in einer Liste gespeichert. In einer weiteren Liste wir das jeweilige Muster gespeichert welches das erste ersetzen soll. 
 
-Danach wird jeder schwarze Pixel im Bild überprüft, ob dieser Pixel sowie die angrenzenden Pixel gleich wie ein zu ersetzendes Muster sind. Wird ein zu ersetzendes Muster gefunden, werden die entsprechenden Pixel im ursprünglichen Bild mit dem zuvor festgelegten Ersatz Muster ausgetauscht.
+Danach wird jeder schwarze Pixel im Bild überprüft, ob dieser Pixel sowie die angrenzenden Pixel gleich wie ein zu ersetzendes Muster sind. Wird ein zu ersetzendes Muster gefunden, werden die entsprechenden Pixel im ursprünglichen Bild mit dem zuvor festgelegtem Ersatz Muster ausgetauscht.
 
-![Entfernen eines Musters](.\Dateien\Funktion.png){width=60%} 
+![Entfernen eines Musters](.\Dateien\Funktion.png){width=80%} 
