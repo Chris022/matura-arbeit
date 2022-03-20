@@ -2,7 +2,7 @@
 
 ## Problem
 
-Um die Schaltung zu digitalisieren, müssen alle Bauteile, nach dem deren Position gefunden worden ist, noch richtig erkannt werden.
+Um die Schaltung zu digitalisieren, müssen alle Bauteile, nachdem deren Position gefunden worden ist, noch richtig erkannt werden.
 
 ## Idee
 
@@ -10,11 +10,11 @@ Um die Bauteile zu erkennen soll ein "Convolutional Neural Network" verwendet we
 
 ![Funktion CNN](.\Dateien\cnn.png){width=70%}
 
-Diesem Netzwerk wird das Bild eines Bauteiles übergeben und als Antwort erhählt um welches Bauteil es sich am wahrscheinlichsten handelt.
+Diesem Netzwerk wird das Bild eines Bauteiles übergeben und als Antwort erhählt man um welches Bauteil es sich am wahrscheinlichsten handelt.
 
 ## Neuronales Netzwerk
 
-Ein Neuronales Netzwerk ist ein Algorithmus der dem Menschlichem Gehirn nachempfunden ist. Solche Netzwerke können verwendet werden, um Muster in Daten zu finden, wie zum Beispiel gegenständen auf Bildern zu erkennen.
+Ein Neuronales Netzwerk ist ein Algorithmus der dem Menschlichem Gehirn nachempfunden ist. Solche Netzwerke können verwendet werden, um Muster in Daten zu finden, wie zum Beispiel Gegenstände auf Bildern zu erkennen.
 
 ### Aufbau
 
@@ -33,10 +33,10 @@ Die Länge des Output Layers wäre die Anzahl der verschiedenen Bauteile die die
 ![Output Layer eines Neuronalen Netzwerkes](.\Dateien\outputLayer.png){width=70%}
 
 
-Alle Neuronen in einem Layer sind mit keweils allen Neuronen aus dem vorherigen Layer über Gewichte (weights) verbunden und besitzten einen Schwellwert (bias).
+Alle Neuronen in einem Layer sind mit jeweils allen Neuronen aus dem vorherigen Layer über Gewichte (weights) verbunden und besitzten einen Schwellwert (bias).
 
 
-Um die Aktivierung eines Neurons zu berechne wird zuerst die Gewichtete Summe berechnet. Für die Gewichtete Summe z wird jeder Eingang x mit seinem jeweiligen Gewicht w multiplieziert und diese werden mit dem bias  des Neurons addiert. Die Gewichtete Summe wird zum Schluss in eine Funktion (Activation function) gegeben, der Funktionswert entspricht der Aktivierung.
+Um die Aktivierung eines Neurons zu berechnen wird zuerst die gewichtete Summe berechnet. Für die gewichtete Summe z wird jeder Eingang x mit seinem jeweiligen Gewicht w multiplieziert und diese werden mit dem bias  des Neurons addiert. Die gewichtete Summe wird zum Schluss in eine Funktion (Activation function) gegeben, der Funktionswert entspricht der Aktivierung.
 
 ![Aktivierung eines Neurons](.\Dateien\singleNeuron.png){width=70%}
 
@@ -63,11 +63,11 @@ Ein Convolutional Neural Network besitzt im gegensatz zu einem Neuronalen Netzwe
 
 Bei einem Convolutional Layer werden ein oderer mehrere Filter verwendet.
 
-Diese Filter werden dabei über das Bild geschoben und die darunter liegenden Werte werden mit den Filterwerten multipliziert und addiert. Der resultierende wert wir darauf hin in einer sogennante "Feature map" gespeichert.
+Diese Filter werden dabei über das Bild geschoben und die darunter liegenden Werte werden mit den Filterwerten multipliziert und addiert. Der resultierende Wert wird daraufhin in einer sogennante "Feature map" gespeichert.
 
 ### Beispiel Filter
 
-Bei diesem Beispiel wird ein Filter verwendet um eine spezielle Ecke zu erkennen. Je höher der Wert in der Feature map desto höher ist die übereinstimmung. 
+Bei diesem Beispiel wird ein Filter verwendet um eine spezielle Ecke zu erkennen. Je höher der Wert in der Feature map desto höher ist die Übereinstimmung. 
 
 ![Beispiel Filter zur erkennung von Ecken](.\Dateien\filter.png){width=70%}
 
@@ -99,4 +99,7 @@ Zum Schluss werden noch, wie bei einem Neuronalen Netzwerk, vollständig verbund
 
 Das Convolutional Neural Network wurde mit der open-source Library Tensorflow implementiert.
 
+Die Position der Bauteile ist bereits bekannt. Die davor erstellten Bounding Boxen werden aus dem Binärbild ausgeschnitten und auf eine größe von 32x32 Pixel skaliert. Die einzelnen Pixelwerte des Bildes werden davor noch durch 255 dividiert damit jeder Wert zwischen 0 und 1 liegt. Jedes davor gefundene Bauteil wird so klassifiziert.
+
+![Fully Connected Layer](.\Dateien\box.png){width=70%}
 
