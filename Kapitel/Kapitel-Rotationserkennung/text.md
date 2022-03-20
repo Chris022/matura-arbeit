@@ -2,13 +2,13 @@
 
 ## Problem
 
-Nachdem alle Bauteile Klassifiziert wurden, muss für jedes Bauteil noch festgestellt werden in welche richtung (horizontal oder vertikal) es gedreht ist, damit das Bauteil in LTspice richtig gezeichnet werden kann.
+Nachdem alle Bauteile klassifiziert wurden, muss für jedes Bauteil noch festgestellt werden in welche Richtung (horizontal oder vertikal) es gedreht ist, damit das Bauteil in LTspice richtig gezeichnet werden kann.
 
 ## Idee
 
 ## Rotationserkennung mit Neuronalem Netzwerk
 
-Dass Neuronale Netzwerk, welches darauf trainiert wurde, die Bauteile zu klassifizieren soll zusätlich noch die Rotation jedes Bauteils herausfinden.
+Dass Neuronale Netzwerk, welches darauf trainiert wurde, die Bauteile zu klassifizieren soll zusätzlich noch die Rotation jedes Bauteils herausfinden.
 
 Diese Mehtode der Rotationserkennung war jedoch sehr ungenau, weshalb eine andere Methode gewählt wurde.
 
