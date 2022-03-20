@@ -5,7 +5,6 @@ geometry: margin=1in
 fontfamily: Cabin
 fontfamilyoptions: sfdefault
 numbersections: true
-toc: true
 toc-title: Inhalt
 header-includes: |
     \usepackage{graphicx}
@@ -20,6 +19,9 @@ header-includes: |
     \renewcommand{\listfigurename}{}
     \lstset{frame = single}
     \renewcommand{\figurename}{Abbildung}
+    \renewcommand*\contentsname{}
 ---
-
+\newpage
+# Inhaltsverzeichnis
+\tableofcontents
 \newpage
