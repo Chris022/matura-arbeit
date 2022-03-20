@@ -3,6 +3,7 @@
     "author":"Christoph Weberbauer, Markus Mayrhofer",
     "kapitel":[
         "Einleitung",
+        "Kapitel-GUI",
         "Kapitel-GraphLib",
         "Kapitel-ErstellungEinesGraphen",
         "Bounding-Boxes-Erstellen",
