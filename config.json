@@ -2,6 +2,7 @@
     "titel":"BlaBla",
     "author":"Christoph Weberbauer, Markus Mayrhofer",
     "kapitel":[
+        "Dokumentation",
         "Einleitung",
         "Kapitel-GUI",
         "Kapitel-BildbearbeitungOpenCV",

@@ -32,8 +32,12 @@ out.write(wholeMarkdown)
 out.close()
 
 createLatex = "pandoc chache/combined.md -f markdown -t latex -s -o chache/out.tex --listings"
-
 os.system(createLatex)
+
+
+#latex = open("chache/out.tex").read()
+#open("chache/out.tex","w").write(latex.replace("\\begin{longtable}[]{@{}ll@{}}","\\begin{longtable}[]{@{}l|l@{}}"))
+
 
 createPDF = "cd chache & lualatex out.tex"
 os.system(createPDF)

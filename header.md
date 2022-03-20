@@ -22,6 +22,3 @@ header-includes: |
     \renewcommand*\contentsname{}
 ---
 \newpage
-# Inhaltsverzeichnis
-\tableofcontents
-\newpage
