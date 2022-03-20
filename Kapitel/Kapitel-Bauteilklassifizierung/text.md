@@ -56,6 +56,47 @@ Zuerst werden die Gewichte und Schwellwerte zufällig gewählt. Danach wird die 
 
 ## Convolutional Neural Network
 
+Ein Convolutional Neural Network besitzt im gegensatz zu einem Neuronalen Netzwerk mehr verschiedene Layer.
+
+
+### Filter
+
+Bei einem Convolutional Layer werden ein oderer mehrere Filter verwendet.
+
+Diese Filter werden dabei über das Bild geschoben und die darunter liegenden Werte werden mit den Filterwerten multipliziert und addiert. Der resultierende wert wir darauf hin in einer sogennante "Feature map" gespeichert.
+
+### Beispiel Filter
+
+Bei diesem Beispiel wird ein Filter verwendet um eine spezielle Ecke zu erkennen. Je höher der Wert in der Feature map desto höher ist die übereinstimmung. 
+
+![Beispiel Filter zur erkennung von Ecken](.\Dateien\filter.png){width=70%}
+
+### Convolutional Layer
+
+Ein Convolutional Layer besteht meist aus mehreren Filtern die eine vielzahl an Feature maps erzeugen.
+
+![Beispiel Convolutional Layer mit einem Filter](.\Dateien\convLayer.png){width=50%}
+
+### Pooling Layer
+
+Ein weiterer Layer ist der Pooling Layer. Um die Dimensionen der Feature maps zu reduzieren werden pooling Layer verwendet. Dies reduziert den Rechenaufwand und somit die Zeit ein Netzwerk zu trainieren.
+
+Ein Beispiel für einen pooling Layer ist max Pooling.
+
+### Beispiel Max pooling
+
+Bei diesem Beispiel ist die Feature map am Anfang eine 4x4 Matrix. Der Filter hat eine größe von 2x2 und wird immer um 2 Felder weiterbewegt. Für jede Region wird nur der maximale Wert übernommen und in eine neue Matrix eingetragen.
+
+![Max pooling](.\Dateien\pooling.png){width=50%}
+
+### Fully Connected Layer
+
+Zum Schluss werden noch, wie bei einem Neuronalen Netzwerk, vollständig verbundene Layer verwendet um aus den Feature maps die endgültigen vorhersagen zu berechnen.
+
+![Fully Connected Layer](.\Dateien\dense.png){width=40%}
+
 ## Umsetzung
 
-Das Convolutional Neural Network wurde mit der Library Tensorflow implementiert.
+Das Convolutional Neural Network wurde mit der open-source Library Tensorflow implementiert.
+
+
