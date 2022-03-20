@@ -3,7 +3,7 @@
 ## Problem
 
 Um das Bild in eine Schaltung umwandeln zu können, muss dieses erst in ein Binärbild umgewandelt werden.
-Dafür wird ein algorithmus aus der Python Library OpenCV verwendet. Da jedoch jedes Bild unterschiedlich beleuchtet ist, ist es nicht möglich bei allen Bildern die selben Einstellungen zu benutzen.
+Dafür wird ein Algorithmus aus der Python Library OpenCV verwendet. Da jedoch jedes Bild unterschiedlich beleuchtet ist, ist es nicht möglich bei allen Bildern die selben Einstellungen zu benutzen.
 
 
 ## Idee
@@ -16,7 +16,7 @@ Die GUI ist in verschiedene Fenster unterteilt. Jedes dieser Fenster ist für ei
 
 ### Bild öffnen
 
-Wird das Programm gestartet, muss mann Zuerst ein Bild öffnen.
+Wird das Programm gestartet, muss mann zuerst ein Bild öffnen.
 
 ![Bild öffnen](.\Dateien\OpenFile.png){width=80%}
 
@@ -32,12 +32,12 @@ Das Ausgewählte Bild wird jetzt im Program angezeigt und kann noch zugeschnitte
 
 ### Binärbild erstellen
 
-Als nächste wird das Bild in ein Binärbild umgewandelt. 
+Als nächstes wird das Bild in ein Binärbild umgewandelt. 
 
 Dazu wird eine der zwei Funktionen "threshold" oder "adaptiveThreshold" aus der Library OpenCV verwendet.
 
 Der Funktion "threshold" wird ein Schwellenwert zwischen 0 und 255 übergeben. Diser Wert kann mithilfe des zweiten Schiebereglers eingestellt werden. Jeder Pixel mit einem Wert unter dem Schwellenwert wird auf 0 gesetzt, jeder mit einem höheren Wert auf 255.
-Um ein besseres Ergebnis zu erzielen, kann mit dem ersten Schieberegler zusätzlich mit der Funktion "GaussianBlur" das Bild unscharf gemacht werden, um Rauschen aus dem Bild zu entfernen.
+Um ein besseres Ergebnis zu erzielen, kann mit dem ersten Schieberegler zusätzlich diie Funktion "GaussianBlur" das Bild unscharf machen, um Rauschen aus dem Bild zu entfernen.
 
 Diese funktioniert jedoch nur bei gleichmäßig ausgeleuchteten Bildern.
 
