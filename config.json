@@ -1,20 +1,20 @@
 {
     "titel":"Smarter Circuits",
-    "author":"Christoph Weberbauer, Markus Mayrhofer",
-    "kapitel":[
-        "Dokumentation",
-        "Einleitung",
-        "Kapitel-GUI",
-        "Kapitel-BildbearbeitungOpenCV",
-        "Kapitel-EntfernenVonMustern",
-        "Kapitel-GraphLib",
-        "Kapitel-ErstellungEinesGraphen",
-        "Bounding-Boxes-Erstellen",
-        "Kapitel-Bauteilklassifizierung",
-        "Kapitel-Rotationserkennung",
-        "Kapitel-UmstruckturierenGraph",
-        "Kapitel-File-Erstellen",
-        "Footer"
-    ]
-    
+    "author":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
+    "kapitel":{
+        "Dokumentation":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
+        "Einleitung":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-GUI":"Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-BildbearbeitungOpenCV":"Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-EntfernenVonMustern":"Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-GraphLib":"Christoph Weberbauer",
+        "Kapitel-ErstellungEinesGraphen":"Christoph Weberbauer",
+        "Kaptiel-BoundingBoxes":"Christoph Weberbauer",
+        "Kapitel-Bauteilklassifizierung":"Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-Rotationserkennung":"Markus Mayrhofer-Reinhartshuber",
+        "Kapitel-UmstruckturierenGraph":"Christoph Weberbauer",
+        "Kapitel-FileErstellen":"Christoph Weberbauer",
+        "Footer":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber"
+    }
+
 }

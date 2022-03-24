@@ -7,10 +7,10 @@ config = json.load(configF)
 
 #combine all markdown files
 wholeMarkdown = ""
-for kapitel in config["kapitel"]:
+for kapitel in config["kapitel"].keys():
     md = open("./Kapitel/"+kapitel+"/text.md").read()
     md = md.replace("Dateien\\","Dateien-"+kapitel+"\\")
-    wholeMarkdown += "\n\n\\newpage\n\n"+ str(md)
+    wholeMarkdown += "\n\n\\newpage\n\n"+ "\\fancyfoot[C]{"+config["kapitel"][kapitel]+"}\n" + str(md)
     #copy dateien
     copyPDF = "xcopy Kapitel\\"+kapitel+"\\Dateien chache\\Dateien-"+kapitel+" /E/H/Y/i"
     print(copyPDF)
