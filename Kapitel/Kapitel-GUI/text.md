@@ -12,7 +12,14 @@ Bei jedem Bild kann der Benutzer selbst gewisse Werte für den Alogrithmus verä
 
 ## Umsetzung
 
-Die GUI ist in verschiedene Fenster unterteilt. Jedes dieser Fenster ist für einen Teil zuständig. Mit den Knöpfen "Next" und "Back" kann jederzeit ein Fenster nach vorne oder zurück gewechselt werden. 
+Die GUI ist in verschidene Abschnitte unterteilt.
+* Bild öffnen
+* Bild zuschneiden
+* Binärbild erstellen
+* Bild umwandeln
+
+Mit den Knöpfen "Next" und "Back" kann jederzeit ein Abschnitte nach vorne oder zurück gewechselt werden. 
+
 
 ### Bild öffnen
 
@@ -28,7 +35,7 @@ Wird der Knopf "Open File" gedrückt, öffnet sich in einem neuen Fenster der Fi
 
 Das Ausgewählte Bild wird jetzt im Program angezeigt und kann noch zugeschnitten werden, damit auf dem Bild nur noch die Schaltung zu sehen ist. Dafür wird mit der Maus auf einen Punkt geklickt und mit gedrückter Maustaste die Maus zu einem zweiten Punkt bewegt. Das dadurch entstehende Rechteck zeigt den Teil des Bildes, welcher ausgeschnitten wird. Der restliche Teil des Bildes wird ausgegraut dargestellt.
 
-![Bild zuschneiden](.\Dateien\CropImage.png){width=80%}
+![Bild zuschneiden](.\Dateien\CropImage2.png){width=80%}
 
 ### Binärbild erstellen
 
@@ -36,22 +43,25 @@ Als nächstes wird das Bild in ein Binärbild umgewandelt.
 
 Dazu wird eine der zwei Funktionen "threshold" oder "adaptiveThreshold" aus der Library OpenCV verwendet.
 
-Der Funktion "threshold" wird ein Schwellenwert zwischen 0 und 255 übergeben. Diser Wert kann mithilfe des zweiten Schiebereglers eingestellt werden. Jeder Pixel mit einem Wert unter dem Schwellenwert wird auf 0 gesetzt, jeder mit einem höheren Wert auf 255.
-Um ein besseres Ergebnis zu erzielen, kann mit dem ersten Schieberegler zusätzlich diie Funktion "GaussianBlur" das Bild unscharf machen, um Rauschen aus dem Bild zu entfernen.
+Um ein besseres Ergebnis zu erzielen, kann zuvor, mit dem ersten Schieberegler "Blur" zusätzlich die Funktion "GaussianBlur" das Bild unscharf machen, um Rauschen aus dem Bild zu entfernen.
+
+Der Funktion "threshold" wird ein Schwellenwert zwischen 0 und 255 übergeben. Dieser Wert kann mithilfe des zweiten Schiebereglers "Threshold value" eingestellt werden. Jeder Pixel mit einem Wert unter dem Schwellenwert wird auf 0 gesetzt, jeder mit einem höheren Wert auf 255.
 
 Diese funktioniert jedoch nur bei gleichmäßig ausgeleuchteten Bildern.
 
 Das Ergebniss dieser Funktion bei ungleichmäßig ausgeleuchteten Bildern ist in der unteren Abbildung zu sehen.
 Für diese Fälle gibt es eine zweite Möglichkeit ein Bild in ein Binärbild umzuwandeln.
+Da die erste Möglichkeit einfacher und schneller zu benutzen ist und bei einem großteil der Bilder funktioniert stehen dem Benutzer beide Funktionen zur verfügung.
 
-![Binärbild erstellen](.\Dateien\SimpleThreshold.png){width=80%}
+![Binärbild erstellen](.\Dateien\SimpleThreshold2.png){width=80%}
 
 Die zweite Funktion "adaptiveThreshold" benutzt für jede Bildregion einen anderen Schwellenwert der von der Beleuchtung in dem jeweiligen Bereich abhängt. Dadurch ist es auch möglich bei ungleichmäßig ausgeleuchteten Bildern ein Binärbild zu erstellen.
-Mit dem vierten und fünften Schieberegler können die beiden Parameter für diese Funktion verändert werden.
-Wie bei der ersten Methode kann auch wieder hier mit dem dritten Schiebergeler das Bild unscharf gemacht werden, um ein besseres Ergebnis zu erzielen.
+Mit dem dritten und vierten Schieberegler "Block size" und "Constant" können die beiden Parameter für diese Funktion verändert werden.
+"Block size" gibt dabei an, wie viele Nachbarpixel zur berechnung des Schwellenwertes verwendet werden.
+"Constant" ist ein Wert, der von dem berechneten Schwellwert subtrahiert wird.
 
 
-![Binärbild erstellen](.\Dateien\AdaptiveThreshold.png){width=80%}
+![Binärbild erstellen](.\Dateien\AdaptiveThreshold2.png){width=80%}
 
 Mit dem Knopf "Reset" kann das Bild wieder auf das Ausgangsbild zurückgesetzt werden.
 
@@ -60,7 +70,7 @@ Mit dem Knopf "Reset" kann das Bild wieder auf das Ausgangsbild zurückgesetzt w
 
 Zuletzt kann die Schaltung mit dem Knopf "Detect Circuit" in ein LTspice File umgewandelt werden.
 
-![Bild umwandeln](.\Dateien\Detect.png){width=80%}
+![Bild umwandeln](.\Dateien\Detect2.png){width=80%}
 
 Wenn die Schaltung fertig umgewandelt wurde, wird LTspice gestarten und die erstellte Datei wird geöffnet. 
 
