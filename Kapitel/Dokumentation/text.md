@@ -1,7 +1,7 @@
 **Diplomarbeit - Dokumentation**
 
 +:--------------------------------+:----------------------------------------+
-| Namen der Verfasserinnen /\     | Christoph Weberbauer                    |
+| Namen der Verfasserinnen /\     | Christoph Weberbauer\                   |
 | Verfasser                       | Markus Mayrhofer-Reinhartshuber         |
 +---------------------------------+-----------------------------------------+
 | Jahrgang\                       | 5BHEL\                                  |
@@ -14,7 +14,7 @@
 | Kooperationspartner             | keine                                   |
 +---------------------------------+-----------------------------------------+
 | Aufgabenstellung                | Die Simulation einer Hardware-Schaltung |
-|                                 | erfolgt meist in 2 Schritten. Zuerst    |
+|                                 | erfolgt meist in zwei Schritten. Zuerst |
 |                                 | wird die Schaltung manuell berechnet    |
 |                                 | und am Papier skizziert. Danach wird    |
 |                                 | sie in ein Simulationsprogramm          |
@@ -29,18 +29,18 @@
 +---------------------------------+-----------------------------------------+
 | Realisierung                    | Simulationen elektronischer Schaltungen |
 |                                 | sollen mit diesem Projekt komfortabel   |
-|                                 | auf eine völlig neue weise durchgeführt |
+|                                 | auf eine völlig neue Weise durchgeführt |
 |                                 | werden. Handschriftlich gezeichnete     |
 |                                 | Schaltungen werden dabei erkannt und in |
-|                                 | ein, von bereits vorhanden Simulatoren, |
+|                                 | ein für bereits vorhanden Simulatoren   |
 |                                 | verständliches Format umgewandelt.      |
 +---------------------------------+-----------------------------------------+
-| Ergebnisse                      | Eine Software erlaubt es ein Bild der   |
+| Ergebnisse                      | Eine Software erlaubt es, ein Bild der  |
 |                                 | gezeichneten Schaltung zu laden.        |
 |                                 | Anschließend müssen einige Einstellungen|
-|                                 | bezüglich der Umwandlung in ein Schwarz/|
-|                                 | Weiß Bild getroffen werden. Wurden diese|
-|                                 | getätigt, wird dich Schaltung analysiert|
+|                                 | bezüglich der Umwandlung in ein Schwarz-|
+|                                 | Weiß-Bild getroffen werden. Wurden diese|
+|                                 | getätigt, wird die Schaltung analysiert |
 |                                 | und in dem Simulator LT-Spice geöffnet. |
 +---------------------------------+-----------------------------------------+
 | Typische Grafik, Foto etc.      | ![](.\Dateien\logo.jpg){width=50%}\     |
@@ -58,7 +58,7 @@
 **Diploma thesis - Documentation**
 
 +:--------------------------------+:----------------------------------------+
-| Author(s)                       | Christoph Weberbauer                    |
+| Author(s)                       | Christoph Weberbauer\                   |
 |                                 | Markus Mayrhofer-Reinhartshuber         |
 +---------------------------------+-----------------------------------------+
 | Form\                           | 5BHEL\                                  |
@@ -92,9 +92,9 @@
 | Results                         | A software allows to load an image of   |
 |                                 | the drawn circuit. Then some settings   |
 |                                 | must be made, regarding the conversion  |
-|                                 | to a black/white image. Once these have |
-|                                 | been made, the circuit is analysed and  |
-|                                 | opened in the LT-Spice simulator.       |
+|                                 | to a black and white image. Once these  |
+|                                 | have been made, the circuit is analysed |
+|                                 | and opened in the LT-Spice simulator.   |
 +---------------------------------+-----------------------------------------+
 | Illustrative Graph, Photo\      | ![](.\Dateien\logo.jpg){width=50%}\     |
 | (incl. explanation)             | Logo                                    |
