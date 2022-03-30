@@ -4,13 +4,14 @@
 
 Nachdem alle Bauteile klassifiziert wurden, muss für jedes Bauteil noch festgestellt werden in welche Richtung (horizontal oder vertikal) es gedreht ist, damit das Bauteil in LTspice richtig gezeichnet werden kann.
 
-## Idee
-
 ## Rotationserkennung mit Neuronalem Netzwerk
 
-Dass Neuronale Netzwerk, welches darauf trainiert wurde, die Bauteile zu klassifizieren soll zusätzlich noch die Rotation jedes Bauteils herausfinden.
+Das Neuronale Netzwerk, welches darauf trainiert wurde, die Bauteile zu klassifizieren, sollte zusätzlich noch die Rotation jedes Bauteils herausfinden. 
 
-Diese Mehtode der Rotationserkennung war jedoch sehr ungenau, weshalb eine andere Methode gewählt wurde.
+Dafür wurde der Output Layer des Netzwerkes um vier Neuronen erweitert, welche jeweils für eine Richtung stehen. Als Richtung wurde das Neuron mit der höchsten Aktivierung verwendet.
+
+Diese Mehtode der Rotationserkennung war jedoch sehr ungenau, da die Ausgabe des Neuronalen Netzwerkes oft falsch war.
+Deshalb wurde eine andere Methode zur Erkennung der Rotation gewählt.
 
 
 ## Umsetzung 
