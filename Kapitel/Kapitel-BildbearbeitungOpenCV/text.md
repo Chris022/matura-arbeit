@@ -6,7 +6,7 @@ Um das Bild der Schaltung weiter verarbeiten zu können, ist es wichtig, alle Li
 
 ## Idee
 
-Mithilfe einer Funktion aus der Python Library OpenCV soll jede Linie in dem Bild in eine Linie mit einer Breite von einem Pixel umgewandeldt werden.
+Mithilfe der Funktion "ximgproc.thinning" aus der Python Library OpenCV soll jede Linie in dem Bild in eine Linie mit einer Breite von einem Pixel umgewandeldt werden.
 
 ![Binärbild und gewünschtes Ergebnis](.\Dateien\Ziel.png){width=100%}
 
@@ -28,7 +28,7 @@ Um zu verhindern dass Spulen entfernt werden, werden zuerst die schwarzen Fläch
 
 Um Spulen entfernen zu können, muss zuerst die durchschnittliche Dicke der Linien in der Schaltung herausgefunden werden.
 
-Dafür wird in jeder Spalte jeder Pixel nacheinander überprüft. Sobald ein Pixel schwarz ist, hat man eine Linie gefunden. Ein Zähler wird ab diesem Pixel so lange erhöht bis wieder ein weißer Pixel auftritt und die gezeichnete Linie somit endet. Nach jeder Linie wird die Dicke der Linie in dieser Spalte in eine Liste gespeichert. 
+Dafür wird in jeder Spalte jedes Pixel nacheinander überprüft. Sobald ein Pixel schwarz ist, hat man eine Linie gefunden. Ein Zähler wird ab diesem Pixel so lange erhöht bis wieder ein weißer Pixel auftritt und die gezeichnete Linie somit endet. Nach jeder Linie wird die Dicke der Linie in dieser Spalte in eine Liste gespeichert. 
 
 Beispiel einer Linie welche in der rot makierten Spalte drei Pixel breit ist.
 
@@ -37,21 +37,23 @@ Beispiel einer Linie welche in der rot makierten Spalte drei Pixel breit ist.
 Als durchschnittliche Liniendicke wird der Wert gewählt, welcher bei den in der Liste gespeicherten Breiten am häufigsten auftritt.
 
 
+### Beispiel der Funktion Erode
+
+Um Spulen zu entfernen wird die Funktion "erode" aus der Library OpenCV verwendet. Dabei wird eine Filtermaske über ein Bild geschoben. Ein Pixel im Originalbild bleibt nur dann weiß, wenn alle Pixel unter dem Filter weiß sind.
+
+![Funktion "erode" mit 3x3 Filter Beispiel 1](.\Dateien\erode1.png){width=60%}
+
+Unter dem 3x3 Filter sind schwarze und weiße Pixel somit wird das Pixel im Zentrum des Filters schwarz.
+
+![Funktion "erode" mit 3x3 Filter Beispiel 2](.\Dateien\erode2.png){width=60%}
+
+Wird der Filter einen Pixel weiter nach rechts bewegt, sind alle Pixel unter dem Filter weiß, das Pixel bleibt somit weiß.
+
+Damit ist es möglich, dicke Linien dünner zu machen, sowie dünne Linien zu entfernen.
+
 ### Entfernen von Spulen
 
-Um Spulen zu entfernen wird die Funktion "erode" aus der Library OpenCV verwendet. Dabei wird eine Filtermaske über ein Bild geschoben. Ein Pixel im Originalbild bleibt nur dann weiß, wenn alle Pixlel unter dem Filter weiß sind.
-
-![Funktion "erode" Beispiel 1](.\Dateien\erode1.png){width=60%}
-
-Unter dem 3x3 Filter sind schwarze und weiße Pixel somit wird der Pixel im Zentrum des Filters schwarz.
-
-![Funktion "erode" Beispiel 2](.\Dateien\erode2.png){width=60%}
-
-Wird der Filter einen Pixel weiter nach rechts bewegt, sind alle Pixel unter dem Filter weiß, der Pixel bleibt somit weiß.
-
-Damit ist es möglich dicke Linien dünner zu machen, sowie dünne Linien zu entfernen.
-
-Wird nun das Binäre Bild invertiert, und diese Funktion mit einer Filtergröße von der dreifachen zuvor ausgerechneten Liniendicke angewandt, bleibt nur noch die Spule zurück. 
+Wird nun das binäre Bild invertiert und diese Funktion mit einer Filtergröße von der dreifachen zuvor ausgerechneten Liniendicke angewandt, bleibt nur noch die Spule zurück. 
 
 ![Entfernen der Schaltung bis auf Spulen](.\Dateien\Erode.png){width=100%}
 
@@ -62,6 +64,6 @@ Danach wird die Differenz zwischen dem Invertiertend Binärbild und dem "Erosion
 
 ### Umwandeln des Bildes
 
-Um alle Linien in eine Breite von einem Pixel umzuwandeln wird die Funktion "thinnImage" aus der Library OpenCV verwendet. Diese liefert als Rückgabewert das konvertierte Bild.
+Um alle Linien in eine Breite von einem Pixel umzuwandeln, wird die Funktion "ximgproc.thinning" aus der Library OpenCV verwendet. Diese liefert als Rückgabewert das konvertierte Bild.
 
 ![Bild mit einer Linienbreite von einem Pixel](.\Dateien\thinn.png){width=80%}
