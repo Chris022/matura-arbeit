@@ -3,15 +3,15 @@
 ## Begriffe
 
 ### Richtungs-Gradient
-Ist ein Konstrukt, welches eine Liste von besuchten Koordinaten mitführt. Bei jeder neu hinzugefügten Koordinate wird die Richtung der letzten N Koordinaten geprüft. Sollte diese Richtung durchschnittlich eine andere sein als jene zu vor wir eine Richtungsänderung erkannt!
+Ein Richtungs-Gradient ist ein Konstrukt, welches eine Liste von besuchten Koordinaten mitführt und bei jeder neu hinzugefügten Koordinate die Richtung der letzten N Koordinaten prüft. Sollte diese Richtung durchschnittlich eine andere sein als jene zuvor, wird eine Richtungsänderung erkannt!
 
 ![Beschreibung eines Richtungs-Gradienten](.\Dateien\RichtungsGradient.png) 
 
 ## Problem
-Für eine leichtere Verarbeitung/Bearbeitung sollte das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert, wurde diese Datenstruktur gewählt. Für eine genauere Beschreibung siehe Kapitel zuvor.
+Für eine leichtere Verarbeitung soll das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert, wurde diese Datenstruktur gewählt
 
 ## Idee
-Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung, Pixel für Pixel verfolgt werden.
+Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung Pixel für Pixel verfolgt werden.
 
 So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
 
@@ -30,13 +30,14 @@ So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je ein
 
 Der Graph wird nach folgendem Algorithmus generiert.
 
-Als Input für den Algorithmus muss ein, laut vorherigen Kapitelen bearbeites Bild, als 2D-Array übergeben werden.
-Richtungsänderungen werden mithilfe eines Richtungs-Gradienten erkannt. Für eine Erklärung siehe Richtungs-Gradient zuvor.
+Als Input für den Algorithmus muss ein laut vorherigen Kapiteln bearbeites Bild als 2D-Array übergeben werden.
+Richtungsänderungen werden mithilfe eines zuvor erklärtem Richtungs-Gradienten erkannt.
+Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher in den Graphen hinzugefügt wird, die Koordinaten des gerade besuchten Pixels dazu gespeichert werden. Dies wird für später benötigt!
 
 ```
 erstelle ein leeres Graph Objekt
 while - es existieren noch schwarze Pixel im Bild
-	finde die Koordinaten eines zufälligen, schwarzen Pixels
+	finde die Koordinaten eines zufälligen schwarzen Pixels
 	führe "generatePartGraph" mit gefunden Koordinaten aus
 	führe den generierten Graphen mit dem zuvor erstellen zusammen
 	färbe alle besuchten Pixel weiß
@@ -45,7 +46,7 @@ while - es existieren noch schwarze Pixel im Bild
 ```
 subroutine "generatePartGraph"(startPoint):
 
-	finde alle schwarzen, benachbarten Pixel des gegebenen Startpunktes
+	finde alle schwarzen benachbarten Pixel des gegebenen Startpunktes
 
 	je nach Anzahl der gefunden Pixel
 	 	1 Nachbar:Endpunkt
@@ -76,7 +77,7 @@ subroutine "rekursiv"(currentPixel,lastPixel,lastGraphNode,directionGradient)
 
 	markiere den gerade besuchten Pixel als besucht
 
-	hole alle zum gerade besuchten Pixel, benachbarten Pixel
+	hole alle zum gerade besuchten Pixel benachbarten Pixel
 		jedoch nicht den zuvor besuchten Pixel
 
 	je nach Anzahl der Nachbarn:
