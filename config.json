@@ -1,20 +1,20 @@
 {
     "titel":"Smarter Circuits",
-    "author":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
+    "author":"Weberbauer, Mayrhofer-Reinhartshuber",
     "kapitel":{
-        "Dokumentation":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
-        "Einleitung":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-GUI":"Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-BildbearbeitungOpenCV":"Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-EntfernenVonMustern":"Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-GraphLib":"Christoph Weberbauer",
-        "Kapitel-ErstellungEinesGraphen":"Christoph Weberbauer",
-        "Kaptiel-BoundingBoxes":"Christoph Weberbauer",
-        "Kapitel-Bauteilklassifizierung":"Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-Rotationserkennung":"Markus Mayrhofer-Reinhartshuber",
-        "Kapitel-UmstruckturierenGraph":"Christoph Weberbauer",
-        "Kapitel-FileErstellen":"Christoph Weberbauer",
-        "Footer":"Christoph Weberbauer, Markus Mayrhofer-Reinhartshuber"
+        "Dokumentation":"Weberbauer, Mayrhofer-R. - 5BHEL",
+        "Einleitung":"Weberbauer, Mayrhofer-R. - 5BHEL",
+        "Kapitel-GUI":"Markus Mayrhofer-R. - 5BHEL",
+        "Kapitel-BildbearbeitungOpenCV":"Markus Mayrhofer-R. - 5BHEL",
+        "Kapitel-EntfernenVonMustern":"Markus Mayrhofer-R. - 5BHEL",
+        "Kapitel-GraphLib":"Christoph Weberbauer - 5BHEL",
+        "Kapitel-ErstellungEinesGraphen":"Christoph Weberbauer - 5BHEL",
+        "Kaptiel-BoundingBoxes":"Christoph Weberbauer - 5BHEL",
+        "Kapitel-Bauteilklassifizierung":"Markus Mayrhofer-R. - 5BHEL",
+        "Kapitel-Rotationserkennung":"Markus Mayrhofer-R. - 5BHEL",
+        "Kapitel-UmstruckturierenGraph":"Christoph Weberbauer - 5BHEL",
+        "Kapitel-FileErstellen":"Christoph Weberbauer - 5BHEL",
+        "Footer":"Weberbauer, Mayrhofer-R.-5BHEL"
     }
 
 }

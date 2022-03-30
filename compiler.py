@@ -10,7 +10,7 @@ wholeMarkdown = ""
 for kapitel in config["kapitel"].keys():
     md = open("./Kapitel/"+kapitel+"/text.md").read()
     md = md.replace("Dateien\\","Dateien-"+kapitel+"\\")
-    wholeMarkdown += "\n\n\\newpage\n\n"+ "\\fancyfoot[C]{"+config["kapitel"][kapitel]+"}\n" + str(md)
+    wholeMarkdown += "\n\n\\newpage\n\n"+ "\\fancyfoot[L]{"+config["kapitel"][kapitel]+"}\n" + str(md)
     #copy dateien
     copyPDF = "xcopy Kapitel\\"+kapitel+"\\Dateien chache\\Dateien-"+kapitel+" /E/H/Y/i"
     print(copyPDF)

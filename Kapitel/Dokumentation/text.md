@@ -106,5 +106,8 @@
 |                                 |                                         |
 +---------------------------------+-----------------------------------------+
 \newpage
+
+\clearpage
 # Inhaltsverzeichnis
 \tableofcontents
+\clearpage
