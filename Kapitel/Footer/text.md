@@ -1,8 +1,11 @@
 \newpage
 
+\clearpage
 # Abbildungsverzeichnis 
-
 \listoffigures
+\clearpage
+
+
 
 \newpage
 

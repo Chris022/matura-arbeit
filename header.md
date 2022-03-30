@@ -1,12 +1,9 @@
 ---
-author: <author-placeholder>
-title: <title-placeholder>
 geometry: margin=1in
-fontfamily: Cabin
-fontfamilyoptions: sfdefault
+mainfont: Calibri
 numbersections: true
-toc-title: Inhalt
 header-includes: |
+    \usepackage{fontspec}
     \usepackage{graphicx}
     \usepackage{fancyhdr}
     \graphicspath{ {figures/} }
@@ -20,5 +17,11 @@ header-includes: |
     \lstset{frame = single}
     \renewcommand{\figurename}{Abbildung}
     \renewcommand*\contentsname{}
+
+    \fancyfoot[R]{HTBLuVA - Elektronik}
+
+    \title{<title-placeholder>}
+    \author{<author-placeholder>}
 ---
+\maketitle
 \newpage
