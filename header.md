@@ -19,6 +19,9 @@ header-includes: |
     \renewcommand*\contentsname{}
 
     \fancyfoot[R]{HTBLuVA - Elektronik}
+    \fancyhead[R]{2021/22}
+    \fancyhead[C]{Smarter Circuits}
+    \fancyhead[L]{Diplomarbeit}
 
     \title{<title-placeholder>}
     \author{<author-placeholder>}
