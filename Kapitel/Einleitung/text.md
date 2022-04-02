@@ -24,7 +24,7 @@ Aus diesem Blockschaltbild hat sich folgende Aufgabenteilung sinnvollerweise erg
 * LT-Spice File erstellen
 
 ## Gantt-Diagramm - Markus Mayrhofer
-![](.\Dateien\Gantt_Markus.jpg)
+![](.\Dateien\Gantt_Markus.png)
 
 ## Gantt-Diagramm - Christoph Weberbauer
 ![](.\Dateien\Gantt_Christoph.png)
