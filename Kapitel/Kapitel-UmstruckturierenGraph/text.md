@@ -1,7 +1,7 @@
 # Umstrukturieren des Graphen
 
 ## Problem
-Um den Graphen nun besser in ein von Simulatoren verständliches File umzuwandeln, muss er zuvor noch umstrukturiert werden. Als Erstes müssen alle Koordinaten vergrößert oder verkleinert werden, sodass ein gezeichnetes Bauteil gleich groß ist als ein Bauteil im Simulator. Dies ist nötig, da die Bauteile im Simulatorenprogramm eine fixe Größe haben. Ist nun allerdings eine Schaltung sehr klein gezeichnet, wäre eine Umwandlung nicht möglich!
+Um den Graphen besser in ein von Simulatoren verständliches File umzuwandeln, muss er zuvor noch umstrukturiert werden. Als Erstes müssen alle Koordinaten vergrößert oder verkleinert werden, sodass ein gezeichnetes Bauteil gleich groß ist als ein Bauteil im Simulator. Dies ist nötig, da die Bauteile im Simulatorenprogramm eine fixe Größe haben. Ist nun allerdings eine Schaltung sehr klein gezeichnet, wäre eine Umwandlung nicht möglich!
 
 ![Eine solche Umwandlung wäre nicht möglich, da bereits der Widerstand größer ist als die gesamte Schaltung](.\Dateien\ProblemMitUmwandlung.png){width=60%}
 
@@ -19,11 +19,11 @@ Die Vergrößerung oder Verkleinerung der Koordinaten soll geschehen, indem zuer
 ![Skalieren der Koordinaten](.\Dateien\ProblemMitUmwandlungLösung.png){width=60%}
 
 
-Mithilfe eines weiteren rekursiven Algorithmus, welcher nacheinander alle Bauteile besucht, sollen jene dann, wie in dem "Problem" bereits geschrieben, gerade gerichtet werden.
+Mithilfe eines rekursiven Algorithmus, welcher nacheinander alle Bauteile besucht, sollen jene dann, wie in dem "Problem" bereits geschrieben, gerade gerichtet werden.
 
 ## Umsetzung
 ### Konvertierung der Koordinaten
-Zuerst werden die Bauteilinformationen wie Rotation, Art des Bauteils und Bauteil-Vertices genutzt, um die durchschnittliche Länge der gezeichneten Widerstände zu ermitteln. Dann werden alle Koordinaten, sowohl X als auch Y durch diese Länge dividiert und mit der Länge des Widerstandes im Simulatoren-Programm multipliziert.
+Zuerst werden die Bauteilinformationen wie Rotation, Art des Bauteils und Bauteil-Vertices genutzt, um die durchschnittliche Länge der gezeichneten Widerstände zu ermitteln. Dann werden alle Koordinaten, sowohl X als auch Y durch diese Länge dividiert und mit der Länge des Widerstandes im Simulatoren-Programm(=80) multipliziert.
 
 ### Umstrukturieren des Graphen
 Für jedes vom vorherigen Schritt gefundenes Bauteil wird ein neuer, grüner Vertex in den Graphen eingefügt.
@@ -48,37 +48,11 @@ $$
     dY = Y1 - Y2
 $$
 
-Ist hierbei $dX$ größer, so setzte die Y Koordinate des Nachbars gelich der Y Koordinate des gerade besuchten Vertex.
+Ist hierbei $dX$ größer, werden Y Koordinate des Nachbars gleich der Y Koordinate des gerade besuchten Vertex gesetzt.
 Ist hingengen $dY$ größer wird die X Koordinate des Nachbars gleich der X Koordinate des gerade besuchten Vertex gesetzt.
 
 ![dY ist kleiner und wird somit zu 0 gemacht](.\Dateien\GeradeRichten.png){width=40%}
 
 Wiederhole dies für alle Nachbarn bis alle Vertices einmal besucht wurden
 
-### Beschreibung des Algorithmus  
-
-```
-finde einen Eck-Vertex als Startpunkt
-
-subroutine "traversial"(currentVertex,lastVertex)
-    berechne X1-X2 von dem gerade besuchten und zuletzt besuchten Vertex
-    berechne Y1-Y2 von dem gerade besuchten und zuletzt besuchten Vertex
-    wenn X1-X2 kleiner
-        setze X Position vom gerade besuchten Vertex
-        zur X Position des zuletzt besuchten Vertex
-    sonst
-        setze Y Position vom gerade besuchten Vertex
-        zur Y Position des zuletzt besuchten Vertex
-
-    hole alle Nachbarn des gerade besuchten Vertex
-    für jeden Nachbar
-        wenn Nachbar nicht gleich zuletzt besuchter Vertex
-            rufe Subroutine "traversial" auf mit:
-                currentVertex = Nachbar
-                lastVertex = currentVertex
-```
 \newpage
-
-### Bauteile gerade richten (nicht genutzt)
-Die Idee war es, einfach alle Koordinaten auf einen gewissen Wert zu runden, so würde [175,142] zu [180,140] werden.  
-**Problem**: Schaltungen werden unterschiedlich groß gezeichnet. Somit müssten die Koordinaten auch auf unterschiedliche Werte gerundet werden. Dies ist allerdings kaum machbar.
