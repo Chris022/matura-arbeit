@@ -25,6 +25,5 @@ header-includes: |
 
     \title{<title-placeholder>}
     \author{<author-placeholder>}
+
 ---
-\maketitle
-\newpage

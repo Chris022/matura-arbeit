@@ -1,3 +1,8 @@
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[width=\linewidth]{./Dateien-Dokumentation/Header.PNG}
+\end{center}
+
 **Diplomarbeit - Dokumentation**
 
 +:--------------------------------+:----------------------------------------+
@@ -53,7 +58,20 @@
 | in die Arbeit                   |                                         |
 +---------------------------------+-----------------------------------------+
 
+
++---------------------------+-----------------------+-------------------------------------------+
+| Approbation \             | Prüferin / Prüfer     | Direktorin / Direktor  \                  |
+| (Datum / Unterschrift)    |                       | Abteilungsvorständin / Abteilungsvorstand |
+| &nbsp; \                  | &nbsp; \              | &nbsp; \                                  |
+| &nbsp; \                  | &nbsp; \              | &nbsp; \                                  |
++---------------------------+-----------------------+-------------------------------------------+
+
 \newpage
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[width=\linewidth]{./Dateien-Dokumentation/Header.PNG}
+\end{center}
+
 
 **Diploma thesis - Documentation**
 
@@ -105,6 +123,14 @@
 | Accessibility of Diploma Thesis | School library of the HTBLuVA Salzburg  |
 |                                 |                                         |
 +---------------------------------+-----------------------------------------+
+
++---------------------------+-----------------------+-------------------------------------------+
+| Approval \                | Examiner              | Direktorin / Direktor  \                  |
+| (Date / Sign)             |                       | Head of College / Head of Department      |
+| &nbsp; \                  | &nbsp; \              | &nbsp; \                                  |
+| &nbsp; \                  | &nbsp; \              | &nbsp; \                                  |
++---------------------------+-----------------------+-------------------------------------------+
+\restoregeometry
 \newpage
 
 \clearpage
