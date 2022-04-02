@@ -13,18 +13,18 @@ Für eine leichtere Verarbeitung soll das Bild der Schaltung in eine Datenstrukt
 ## Idee
 Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung Pixel für Pixel verfolgt werden.
 
-So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden werden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
+So sollen alle Eckpunkte, Endpunkte und Verzweigungen gefunden, in je einen Vertex umgewandelt und sinnvoll zu einem Graphen zusammengefügt werden. Jeder der drei Fälle soll dabei ein Vertex mit je einer anderen Farbe sein.
 
 ![Unterschiedliche Typen von Vertices](.\Dateien\SchaltungBild1.png){width=50%}
 
-
+<!--
 ## Umsetzung
-
-![Blockschaltbild des rekursiven teils des Algorithmus](.\Dateien\AlgorithmusBlockschaltbild.png){width=70%}
 
 ![Beispiel Szenario](.\Dateien\AlgorithmusBild1.png){width=60%}
 
 ![Der von oben generierte Graph bei den einzelnen Zwischenschritten](.\Dateien\AlgorithmusBild2.png){width=60%}
+-->
+\newpage
 
 ## Algorithmus
 
@@ -32,8 +32,96 @@ Der Graph wird nach folgendem Algorithmus generiert.
 
 Als Input für den Algorithmus muss ein laut vorherigen Kapiteln bearbeites Bild als 2D-Array übergeben werden.
 Richtungsänderungen werden mithilfe eines zuvor erklärtem Richtungs-Gradienten erkannt.
-Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher in den Graphen hinzugefügt wird, die Koordinaten des gerade besuchten Pixels dazu gespeichert werden. Dies wird für später benötigt!
+Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher dem Graphen hinzugefügt wird, die Koordinaten des gerade besuchten Pixels mit in den Vertex gespeichert werden. Dies wird für später benötigt!
 
+
+### Start
+\# Führt die Generation des Graphen für alle Abschnitte einer Schaltung aus. \
+\# Wobei ein Abschnitt je eine zusammenhängende, ununterbrochene Linie ist. \
+\
+**Erstelle** einen leeren Graphen.\
+**Wiederhole** bis keine schwarzen Pixel mehr im Bild existieren: \
+&nbsp;&nbsp;&nbsp;**Suche** die Koordinaten eins zufälligen schwarzen Pixels im Bild. \
+&nbsp;&nbsp;&nbsp;**Rufe** die Subroutine "*GeneratePartGraph*" mit den gefunden Koordinaten als Startpunkt **auf**. \
+&nbsp;&nbsp;&nbsp;Diese erzeugt einen Graphen aus einer zusammenhängenden Linie. \
+&nbsp;&nbsp;&nbsp;**Füge** diesen in den zuvor erstellten Graphen **ein**\
+&nbsp;&nbsp;&nbsp;**Färbe** alle besuchten Pixel weiß, dammit sie nicht erneut besucht werden. \
+
+
+### Subroutine *GeneratePartGraph*:
+\# Erstellt einen Leeren Graphen und bereitet diesen für die Rekursion vor \
+\
+**Erstelle** einen leeren Graphen \
+**Finde** alle schwarzen benachbarten Pixel des gegebenen Startpunktes \
+**Prüfe** die Anzahl der gefunden Pixel \
+&nbsp;&nbsp;&nbsp;Bei 1 Nachbar: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Es handelt sich um einen Endpunkt._ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Füge** einen Vertex mit *baluer* Farbe zum Graphen **hinzu** \
+&nbsp;&nbsp;&nbsp;Bei 2 Nachbarn: \ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Es handelt sich um ein Verbindungsstück._ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Füge** einen Vertex mit *pinker* Farbe zum Graphen **hinzu** \
+&nbsp;&nbsp;&nbsp;Bei mehr als 2 Nachbarn: \ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Es handelt sich um eine Verzweigung._ \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Füge** einen Vertex mit *roter* Farbe zum Graphen **hinzu** \
+**Rufe** die Subrutine "*Recursive*" **auf** \
+**Entferne** alle pinken Pixel
+
+\newpage
+
+### Subroutine *Recursive*:
+\# Wandelt das Bild in einen Graphen um, indem alle Pixel auf einer Linie besucht werden.\
+\
+**Füge** einen neuen Schritt zum Richtungs-Gradient **hinzu**. \
+**Prüfe**, ob der gerade besuchte Pixel als *besucht* makiert ist und es sich somit um das Ende einer Schleife handelt. \
+&nbsp;&nbsp;&nbsp;Wenn Ja: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Finde** den im Graphen eingefügen Vertex, welcher zu dem gerade besuchten Pixel gehört. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellten Vertex und **schließe** somit die Schleife. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Beende** diesen Ast der Rekursion = **Return** \
+**Makiere** den gerade besuchten Pixel als besucht. \
+**Finde** alle benachbarten Pixel, des gerade besuchten, die nicht der zuletzt besuchte Pixel sind \
+**Prüfe** die Anzahl der Nachbarn \
+&nbsp;&nbsp;&nbsp; Bei 0 Nachbarn: \
+&nbsp;&nbsp;&nbsp;\colorbox{blue!30}{|}&nbsp;&nbsp; _Es handelt sich um einen Endpunkt._ \
+&nbsp;&nbsp;&nbsp;\colorbox{blue!30}{|}&nbsp;&nbsp; **Füge** einen Vertex mit *baluer* Farbe zum Graphen **hinzu**. \
+&nbsp;&nbsp;&nbsp;\colorbox{blue!30}{|}&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellen Vertex. \
+&nbsp;&nbsp;&nbsp;\colorbox{blue!30}{|}&nbsp;&nbsp; **Beende** diesen Ast der Rekursion = **Return** \
+&nbsp;&nbsp;&nbsp;Bei 1 Nachbar: \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp; Es handelt sich um ein *Verbindungsstück*. \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp; **Prüfe**, ob der Richtungs-Gradient eine Ecke findet \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Wenn Nein: \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Rufe** die Subroutine für den Nachbar-Pixel erneut auf \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wenn Ja: \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Füge** einen Vertex mit *gelber* Farbe zum Graphen **hinzu**. \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellen Vertex. \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Rufe** die Subroutine für den Nachbar-Pixel erneut auf \
+&nbsp;&nbsp;&nbsp;\colorbox{yellow!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wobei, der Richtungsgradient zurück gesetzt wird und der zuletzt besuchte Vertex der gerade erstellte ist \
+&nbsp;&nbsp;&nbsp; Bei mehr als 2 Nachbarn: \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp; _Es handelt sich um eine Verzweigung._ \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp; **Füge** einen Vertex mit *roter* Farbe zum Graphen **hinzu** \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellen Vertex. \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp; **Wiederhole** für jeden der Nachbarn \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Rufe** die Subroutine für den Nachbar-Pixel erneut auf \
+&nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wobei der zuletzt besuchte Vertex der gerade erstellte ist \
+
+![Grobes Blockschaltbild der "Recursive" Subroutine](.\Dateien\AlgorithmusBlockschaltbild.png){width=70%}
+
+\newpage
+
+**Wichtig**: Basierend auf diesen Algorithmus kann man auch erkennen wieso der Schritt, beschrieben im Kapitel "Entfernen von Mustern" ist nötig ist. Ohne dem Schritt würden im Bild noch Muster wie dieses vorkommen.
+
+![Problem ohne dem Entfernen von Mustern - Bild ohne diesen Schritt](.\Dateien\ProblemMitEcken1){width=15%}
+
+![Problem ohne dem Entfernen von Mustern - Problematischer Pixel](.\Dateien\ProblemMitEcken2){width=15%}
+
+![Problem ohne dem Entfernen von Mustern - Nachbarn](.\Dateien\ProblemMitEcken3){width=15%}
+
+Betrachtet man hier den rot markierten Pixel, so sieht man, dass dieser mehr als nur einen Nachbar hatt und somit vom Algorithmus als Verzweigung erkannt werden würde.
+
+Im Graphen würde dies viele "Schleifen" erzeugen.
+
+![Problem ohne dem Entfernen von Mustern - Im Graphen erzeugte "Schleifen" ](.\Dateien\ProblemMitEcken4){width=20%}
+
+<!---
 ```
 erstelle ein leeres Graph Objekt
 while - es existieren noch schwarze Pixel im Bild
@@ -42,7 +130,8 @@ while - es existieren noch schwarze Pixel im Bild
 	führe den generierten Graphen mit dem zuvor erstellen zusammen
 	färbe alle besuchten Pixel weiß
 ```
-
+-->
+<!---
 ```
 subroutine "generatePartGraph"(startPoint):
 
@@ -54,7 +143,7 @@ subroutine "generatePartGraph"(startPoint):
 	 	2 Nachbarn:Ein normales Verbindungsstück
 		 	füge einen Vertex mit der pinken Farbe hinzu
 	 	mehr als 2 Nachbarn:Eine Verzweigung
-			füge einen Vertex mit der pinken Farbe hinzu
+			füge einen Vertex mit der roter Farbe hinzu
 
 	rufe die Subroutine "rekursiv" auf mit:
 		currentPixel = startPunkt
@@ -65,10 +154,11 @@ subroutine "generatePartGraph"(startPoint):
 	return erstellen Graph und besuchte Pixel
 
 ```
-
+-->
+<!--
 ```
 subroutine "rekursiv"(currentPixel,lastPixel,lastGraphNode,directionGradient)
-	füge eines neuen Schritt zum Richtungs-Gradient hinzu
+	füge einen neuen Schritt zum Richtungs-Gradient hinzu
 
 	prüfe ob der gereade besuchte Pixel bereits zuvor besucht wurde
 		wenn ja ->
@@ -112,3 +202,4 @@ subroutine "rekursiv"(currentPixel,lastPixel,lastGraphNode,directionGradient)
 					lastGraphNode = gerade erstellter Vertex
 					directionGradient = Richtungs-Gradient
 ```
+-->
