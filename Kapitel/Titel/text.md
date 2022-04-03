@@ -21,7 +21,7 @@
 
     \normalsize{Gesamtprojekt} 
 
-    \huge{\textbf{Smarter Circuits - Entwicklung einer Handschrifterkennung für elektronische Schaltungen.}} 
+    \huge{\textbf{Smarter Circuits - Entwicklung einer Handschrifterkennung für elektronische Schaltungen}} 
 \end{center}
 &nbsp;\
 &nbsp;\

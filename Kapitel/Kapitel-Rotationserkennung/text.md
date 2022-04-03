@@ -20,6 +20,6 @@ Der Funktion, welche die Rotation erkennen soll, wird eine Liste mit allen Verti
 
 ![Graph eines Widerstandes](.\Dateien\resistorpattern.png){width=50%}
 
-Aus dieser Liste werden alle Intersection Vertices herausgesucht. Danach wird jeweils der Abstand der beiden Vertices in X-Richtung und Y-Richtung berechnet. Ist der horizontale Abstand größer, ist das Bauteil horizontal gezeichnet ansonsten vertikal.
+Aus dieser Liste werden alle Intersection Vertices herausgesucht. Danach wird jeweils der Abstand der beiden Vertices in X-Richtung und Y-Richtung berechnet. Ist der horizontale Abstand größer, ist das Bauteil horizontal gezeichnet, ansonsten vertikal.
 
 ![Abstände zwischen den Vertices](.\Dateien\dxdy.png){width=50%}

@@ -3,7 +3,7 @@
 ## Problem
 
 Um das Bild in eine Schaltung umwandeln zu können, muss dieses erst in ein Binärbild umgewandelt werden.
-Dafür wird ein Algorithmus aus der Python Library OpenCV verwendet. Da jedoch jedes Bild unterschiedlich beleuchtet ist, ist es nicht möglich bei allen Bildern die selben Einstellungen zu benutzen.
+Dafür wird ein Algorithmus aus der Python Library OpenCV verwendet. Da jedoch jedes Bild unterschiedlich beleuchtet ist, ist es nicht möglich, bei allen Bildern dieselben Einstellungen zu benutzen.
 
 
 ## Idee
@@ -19,12 +19,12 @@ Die GUI ist in verschidene Abschnitte unterteilt.
 * Binärbild erstellen
 * Bild umwandeln
 
-Mit den Knöpfen "Next" und "Back" kann jederzeit ein Abschnitte nach vorne oder zurück gewechselt werden. 
+Mit den Knöpfen "Next" und "Back" kann jederzeit einen Abschnitt nach vorne oder zurück gewechselt werden. 
 
 
 ### Bild öffnen
 
-Wird das Programm gestartet, muss mann zuerst ein Bild öffnen.
+Wird das Programm gestartet, muss man zuerst ein Bild öffnen.
 
 ![Bild öffnen](.\Dateien\OpenFile.png){width=80%}
 
@@ -34,7 +34,7 @@ Wird der Knopf "Open File" gedrückt, öffnet sich in einem neuen Fenster der Fi
 
 ### Bild zuschneiden
 
-Das Ausgewählte Bild wird jetzt im Program angezeigt und kann noch zugeschnitten werden, damit auf dem Bild nur noch die Schaltung zu sehen ist. Dafür wird mit der Maus auf einen Punkt geklickt und mit gedrückter Maustaste die Maus zu einem zweiten Punkt bewegt. Das dadurch entstehende Rechteck zeigt den Teil des Bildes, welcher ausgeschnitten wird. Der restliche Teil des Bildes wird ausgegraut dargestellt.
+Das ausgewählte Bild wird jetzt im Programm angezeigt und kann noch zugeschnitten werden, damit auf dem Bild nur noch die Schaltung zu sehen ist. Dafür wird mit der Maus auf einen Punkt geklickt und mit gedrückter Maustaste die Maus zu einem zweiten Punkt bewegt. Das dadurch entstehende Rechteck zeigt den Teil des Bildes, welcher ausgeschnitten wird. Der restliche Teil des Bildes wird ausgegraut dargestellt.
 
 ![Bild zuschneiden](.\Dateien\CropImage2.png){width=80%}
 
@@ -44,23 +44,23 @@ Als nächstes wird das Bild in ein Binärbild umgewandelt.
 
 Dazu wird eine der zwei Funktionen "threshold" oder "adaptiveThreshold" aus der Library OpenCV verwendet.
 
-Um ein besseres Ergebnis zu erzielen, kann zuvor, mit dem ersten Schieberegler "Blur" zusätzlich die Funktion "GaussianBlur" das Bild unscharf machen, um Rauschen aus dem Bild zu entfernen.
+Um ein besseres Ergebnis zu erzielen, kann die Funktion "GaussianBlur" mit Hilfe des ersten Schiebereglers "Blur" zusätzlich das Bild unscharf machen, um Rauschen aus dem Bild zu entfernen.
 
 Der Funktion "threshold" wird ein Schwellenwert zwischen 0 und 255 übergeben. Dieser Wert kann mithilfe des zweiten Schiebereglers "Threshold value" eingestellt werden. Jeder Pixel mit einem Wert unter dem Schwellenwert wird auf 0 gesetzt, jeder mit einem höheren Wert auf 255.
 
 Diese funktioniert jedoch nur bei gleichmäßig ausgeleuchteten Bildern.
 
-Das Ergebniss dieser Funktion bei ungleichmäßig ausgeleuchteten Bildern ist in der unteren Abbildung zu sehen.
-Für diese Fälle gibt es eine zweite Möglichkeit ein Bild in ein Binärbild umzuwandeln.
-Da die erste Möglichkeit einfacher und schneller zu benutzen ist und bei einem großteil der Bilder funktioniert stehen dem Benutzer beide Funktionen zur verfügung.
+Das Ergebnis dieser Funktion bei ungleichmäßig ausgeleuchteten Bildern ist in der unteren Abbildung zu sehen.
+Für diese Fälle gibt es eine zweite Möglichkeit, ein Bild in ein Binärbild umzuwandeln.
+Da die erste Möglichkeit einfacher und schneller zu benutzen ist und bei einem Großteil der Bilder funktioniert, stehen dem Benutzer beide Funktionen zur Verfügung.
 
 ![Binärbild erstellen](.\Dateien\SimpleThreshold2.png){width=80%}
 
 \newpage
 
-Die zweite Funktion "adaptiveThreshold" benutzt für jede Bildregion einen anderen Schwellenwert der von der Beleuchtung in dem jeweiligen Bereich abhängt. Dadurch ist es auch möglich bei ungleichmäßig ausgeleuchteten Bildern ein Binärbild zu erstellen.
+Die zweite Funktion "adaptiveThreshold" benutzt für jede Bildregion einen anderen Schwellenwert, der von der Beleuchtung in dem jeweiligen Bereich abhängt. Dadurch ist es auch möglich, bei ungleichmäßig ausgeleuchteten Bildern ein Binärbild zu erstellen.
 Mit dem dritten und vierten Schieberegler "Block size" und "Constant" können die beiden Parameter für diese Funktion verändert werden.
-"Block size" gibt dabei an, wie viele Nachbarpixel zur berechnung des Schwellenwertes verwendet werden.
+"Block size" gibt dabei an, wie viele Nachbarpixel zur Berechnung des Schwellenwertes verwendet werden.
 "Constant" ist ein Wert, der von dem berechneten Schwellwert subtrahiert wird.
 
 

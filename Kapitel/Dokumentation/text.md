@@ -14,7 +14,7 @@
 +---------------------------------+-----------------------------------------+
 | Thema der Diplomarbeit          | Smarter Circuits - Entwicklung einer    | 
 |                                 | Handschrifterkennung für elektronische  |
-|                                 | Schaltungen.                            |
+|                                 | Schaltungen                             |
 +---------------------------------+-----------------------------------------+
 | Kooperationspartner             | keine                                   |
 +---------------------------------+-----------------------------------------+
@@ -84,9 +84,9 @@
 +---------------------------------+-----------------------------------------+
 | Topic                           | Smarter Circuits – development of       | 
 |                                 | handwriting recognition for electronic  |
-|                                 | circuits.                               |
+|                                 | circuits                                |
 +---------------------------------+-----------------------------------------+
-| Co-operation Partners           | none                                   |
+| Co-operation Partners           | none                                    |
 +---------------------------------+-----------------------------------------+
 | Assignment                      | The simulation of a hardware circuit is |
 |                                 | usually done in 2 steps. First, the     |

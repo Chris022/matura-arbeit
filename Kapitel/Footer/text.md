@@ -1,14 +1,16 @@
 \newpage
 # Abschluss
 
-Mit Smarter Circuits ist es somit möglich, eine hangezeichnete SChaltung einfach in eine LTspice-Datei umzuwandeln.
-Es können fünf verschidene Bauteile erkannt werden.
+Mit Smarter Circuits ist es somit möglich, eine handgezeichnete Schaltung einfach in eine LTspice-Datei umzuwandeln.
+Es können fünf verschiedene Bauteile erkannt werden.
 
 * Spannungsquelle
 * Ground
 * Widerstand
 * Kondensator
 * Spule
+
+
 
 
 \newpage
@@ -58,7 +60,7 @@ Es können fünf verschidene Bauteile erkannt werden.
 +--------+-----------------------------------------+--------------+
 | 9      | Softwareoptimierung                     | 20h          |
 +--------+-----------------------------------------+--------------+
-| 10-13  | Schreiben der Diblomarbeit              | 30h          |
+| 10-13  | Schreiben der Diplomarbeit              | 30h          |
 +--------+-----------------------------------------+--------------+
 
 ## Markus Mayrhofer-Reinhartshuber
