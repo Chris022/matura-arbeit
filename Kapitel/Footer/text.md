@@ -1,8 +1,11 @@
 \newpage
+
 # Abschluss
 
+Das Programm konne wie geplant umgesetzt werden.
 Mit Smarter Circuits ist es somit möglich, eine handgezeichnete Schaltung einfach in eine LTspice-Datei umzuwandeln.
-Es können fünf verschiedene Bauteile erkannt werden.
+
+Es können die folgenden fünf verschiedene Bauteile in einer Schaltung erkannt werden:
 
 * Spannungsquelle
 * Ground
