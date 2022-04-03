@@ -45,6 +45,9 @@ os.system(createPDF)
 createPDF = "cd chache & lualatex out.tex"
 os.system(createPDF)
 
+createPDF = "cd chache & lualatex out.tex"
+os.system(createPDF)
+
 copyPDF = "copy chache\out.pdf ."
 
 os.system(copyPDF)
