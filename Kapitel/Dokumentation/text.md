@@ -133,7 +133,6 @@
 \restoregeometry
 \newpage
 
-\clearpage
 # Inhaltsverzeichnis
 \tableofcontents
 \clearpage

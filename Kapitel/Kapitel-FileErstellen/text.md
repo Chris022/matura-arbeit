@@ -61,7 +61,7 @@ Dasselbe wird mit der gezeichneten Schaltung gemacht.
 
 Durch diese Information können dann gleiche Nummern zusammen geordnet, die Anschlüsse richtig verbunden und in die einzelnen Bauteil-Vertices gespeichert werden.
 
-![Graph mit Verbindungen gespeichert. In diesem Fall durch die gepunkteten Linien dargestellt](.\Dateien\ConnectionMap.png){width=40%}
+![Graph mit Verbindungen gespeichert.](.\Dateien\ConnectionMap.png){width=40%}
 
 \newpage
 
@@ -83,7 +83,7 @@ Für jeden Verbindungs-Vertex, wird ein WIRE LT-Spice Code in das Output-File hi
 
 Treffen zwei Bauteile direkt aufeinander wurde dies einen solchen Graphen erzeugen.
 
-![Gepunktete Linien stellen zuvor genannte Verbindungen dar](.\Dateien\Problem2.png){width=40%}
+![Graph für eine Schaltung mit zwei Bauteilen direkt nebeneinander](.\Dateien\Problem2.png){width=40%}
 
 Mit der Beschreibung von oben hätte eine solche Schaltung jedoch keine Verbindung zwischen den beiden Widerständen, da ja dort kein Verbindungs-Vertex ist.
 

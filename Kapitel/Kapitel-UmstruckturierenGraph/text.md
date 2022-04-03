@@ -3,11 +3,11 @@
 ## Problem
 Um den Graphen besser in ein von Simulatoren verständliches File umzuwandeln, muss er zuvor noch umstrukturiert werden. Als Erstes müssen alle Koordinaten vergrößert oder verkleinert werden, sodass ein gezeichnetes Bauteil gleich groß ist als ein Bauteil im Simulator. Dies ist nötig, da die Bauteile im Simulatorenprogramm eine fixe Größe haben. Ist nun allerdings eine Schaltung sehr klein gezeichnet, wäre eine Umwandlung nicht möglich!
 
-![Eine solche Umwandlung wäre nicht möglich, da bereits der Widerstand größer ist als die gesamte Schaltung](.\Dateien\ProblemMitUmwandlung.png){width=60%}
+![Eine solche Umwandlung wäre nicht möglich, da bereits der Widerstand im Simulator (rechts) größer ist als die gesamte gezeichnete Schaltung(links)](.\Dateien\ProblemMitUmwandlung.png){width=60%}
 
-Auch müssen alle Bauteile neu positioniert werden, um geradlinige Linienführung garantieren zu können.
+Auch müssen alle Bauteile neu positioniert werden, um eine geradlinige Linienführung garantieren zu können.
 
-![Problem mit nicht geradlinigen Linienführungen](.\Dateien\FromTo.png){width=60%}
+![Nicht geradlinige Linienführung](.\Dateien\FromTo.png){width=60%}
 
 ## Idee
 Mithilfe eines Algorithmus soll der Graph so umstrukturiert werden, dass alle Bauteile zu je einem Vertex zusammengefasst werden.
@@ -19,7 +19,7 @@ Die Vergrößerung oder Verkleinerung der Koordinaten soll geschehen, indem zuer
 ![Skalieren der Koordinaten](.\Dateien\ProblemMitUmwandlungLösung.png){width=60%}
 
 
-Mithilfe eines rekursiven Algorithmus, welcher nacheinander alle Bauteile besucht, sollen jene dann, wie in dem "Problem" bereits geschrieben, gerade gerichtet werden.
+Mithilfe eines rekursiven Algorithmus, welcher nacheinander alle Bauteile besucht, sollen jene dann noch, wie bereits geschrieben, gerade gerichtet werden.
 
 ## Umsetzung
 ### Konvertierung der Koordinaten
@@ -48,11 +48,11 @@ $$
     dY = Y1 - Y2
 $$
 
-Ist hierbei $dX$ größer, werden Y Koordinate des Nachbars gleich der Y Koordinate des gerade besuchten Vertex gesetzt.
+Ist hierbei $dX$ größer, wird die Y Koordinate des Nachbars gleich der Y Koordinate des gerade besuchten Vertex gesetzt.
 Ist hingengen $dY$ größer wird die X Koordinate des Nachbars gleich der X Koordinate des gerade besuchten Vertex gesetzt.
 
 ![dY ist kleiner und wird somit zu 0 gemacht](.\Dateien\GeradeRichten.png){width=40%}
 
-Wiederhole dies für alle Nachbarn bis alle Vertices einmal besucht wurden
+Wiederhole dies für alle Nachbarn bis alle Vertices einmal besucht wurden.
 
 \newpage
