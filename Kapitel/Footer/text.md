@@ -1,4 +1,17 @@
 \newpage
+# Abschluss
+
+Mit Smarter Circuits ist es somit möglich, eine hangezeichnete SChaltung einfach in eine LTspice-Datei umzuwandeln.
+Es können fünf verschidene Bauteile erkannt werden.
+
+* Spannungsquelle
+* Ground
+* Widerstand
+* Kondensator
+* Spule
+
+
+\newpage
 
 \clearpage
 # Abbildungsverzeichnis 

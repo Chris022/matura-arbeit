@@ -34,9 +34,10 @@ Die Größe des Output Layers wäre die Anzahl der verschiedenen Bauteile, die d
 
 ![Output Layer eines Neuronalen Netzwerkes](.\Dateien\outputLayer.png){width=70%}
 
+\newpage
 
-Alle Neuronen in einem Layer sind mit jeweils allen Neuronen aus dem vorherigen Layer über Gewichte (weights) verbunden und besitzten einen Schwellwert (bias).
-
+Alle Neuronen in einem Layer sind mit jeweils allen Neuronen aus dem vorherigen Layer verbunden. Jede dieser Verbidungen ist jedoch unterschielich Gewichtet und beeinflusst somit das Neuron unterschiedlich stark. Diese Gewichtungen werden "weights" genannt.
+Zusätzlich besitzt jedes Neuron noch einen Schwellwert (bias).
 
 Um die Aktivierung eines Neurons zu ermitteln, wird zuerst die gewichtete Summe berechnet. Für die gewichtete Summe z wird jeder Eingang x mit seinem jeweiligen Gewicht w multiplieziert und diese werden zum bias des Neurons addiert. Die gewichtete Summe wird zum Schluss einer Funktion (Activation function) übergeben, der Funktionswert entspricht der Aktivierung.
 
@@ -48,23 +49,30 @@ In einem Neuronalen Netzwerk sind die Eingänge x jeweils die Aktivierung aus de
 
 ### Trainieren eines Neuronalen Netzwerkes
 
-Die Gewichte und Schwellwerte eines Neuronalen Netzwerkes können mithilfe eines Algorithmus "erlernt" werden.
-Dafür wird eine große Anzahl an Trainingsdaten benötigt. Das sind Daten, bei denen der gewünschte Ausgabewert bereits bekannt ist. 
+Die Gewichte und Schwellwerte eines Neuronalen Netzwerkes können "erlernt" werden.
+Das dafür genutzte Verfahren wird "Backpropagation" genannt.
+Um ein Netzwerk zu trainieren wird eine große Anzahl an Trainingsdaten benötigt. Das sind Daten, bei denen der gewünschte Ausgabewert bereits bekannt ist. 
 
-Zuerst werden die Gewichte und Schwellwerte zufällig gewählt. Danach wird die Ausgabe des Netzwerkes für ein Trainingsbild mit dem gewünschten Ausgabewert verglichen und es kann somit festgestellt werden, wie gut das Netzwerk fuktioniert. Die Gewichte werden daraufhin so verändert, dass die Ausgabe des Netzwerkes sich dem gewünschten Ausgabewert annähert. Dies wird für alle Trainingsdaten so lange wiederholt, bis die Ausgabe des Netzwerkes mit den gewünschten Ausgabewerten annähernd übereinstimmt.
+\newpage
 
-![Ausgabe und gewünschte Ausgabe](.\Dateien\loss.png){width=30%}
+### Funktionsweise Backpropagation
 
+Zuerst werden die Gewichte und Schwellwerte zufällig gewählt. Danach wird die Ausgabe des Netzwerkes für ein Trainingsbild mit dem gewünschten Ausgabewert verglichen und es kann somit festgestellt werden, wie gut das Netzwerk fuktioniert. 
+Die Differenz des gewünschten Ausgabewertes und des tatsächlichen Ausgabewertes sind der Fehler des Netzwerkes.
+
+Daraufhin werden die Gewichte und Schwellenwerte des Netzwerkes, beginnend vom Output Layer, so verändert, dass die Ausgabe des Netzwerkes sich dem gewünschten Ausgabewert annähert. 
+
+Dies wird für alle Trainingsdaten so lange wiederholt, bis die Ausgabe des Netzwerkes mit den gewünschten Ausgabewerten annähernd übereinstimmt.
 
 ## Convolutional Neural Network
 
-Ein Convolutional Neural Network besitzt im Gegensatz zu einem Neuronalen Netzwerk mehr verschiedene Layer.
+Ein Convolutional Neural Network besitzt im Gegensatz zu einem Neuronalen Netzwerk mehr verschiedene Layer, welche sich bessere eignen um Informationen aus einem Bild zu extrahieren.
 
 
 ### Filter
 
 Bei einem Convolutional Layer werden ein oder mehrere Filter verwendet.
-
+Ein Filter ist dabei ein einfacher zweidimensionaler Array.
 Diese Filter werden dabei über das Bild geschoben und die darunter liegenden Werte werden mit den Filterwerten multipliziert und addiert. Der resultierende Wert wird daraufhin in einer sogennante "Feature map" gespeichert.
 
 ### Beispiel Filter
@@ -72,6 +80,8 @@ Diese Filter werden dabei über das Bild geschoben und die darunter liegenden We
 Bei diesem Beispiel wird ein Filter verwendet, um eine spezielle Ecke zu erkennen. Je höher der Wert in der Feature map, desto höher ist die Übereinstimmung. 
 
 ![Beispiel Filter zur Erkennung von Ecken](.\Dateien\filter.png){width=70%}
+
+\newpage
 
 ### Convolutional Layer
 
@@ -81,7 +91,8 @@ Ein Convolutional Layer besteht meist aus mehreren Filtern, die eine Vielzahl an
 
 ### Pooling Layer
 
-Ein weiterer Layer ist der Pooling Layer. Um die Dimensionen der Feature maps zu reduzieren werden Pooling Layer verwendet. Dies reduziert den Rechenaufwand und somit die Zeit, ein Netzwerk zu trainieren.
+Ein weiterer Layer ist der Pooling Layer. Um die Größe der Feature maps zu reduzieren werden Pooling Layer verwendet. 
+Dadurch besitz das Netzwerk weniger Parameter die erlernt werden müssen wodurch der Rechenaufwand und somit die Zeit um ein Netzwerk zu trainieren reduziert wird..
 
 Ein Beispiel für einen Pooling Layer ist Max Pooling.
 
@@ -90,6 +101,8 @@ Ein Beispiel für einen Pooling Layer ist Max Pooling.
 Bei diesem Beispiel ist die Feature map am Anfang eine 4x4 Matrix. Der Filter hat eine Größe von 2x2 und wird immer um zwei Felder weiterbewegt. Für jede Region wird nur der maximale Wert übernommen und in eine neue Matrix eingetragen.
 
 ![Max pooling](.\Dateien\pooling.png){width=50%}
+
+\newpage
 
 ### Fully Connected Layer
 
@@ -101,7 +114,7 @@ Zum Schluss werden noch, wie bei einem Neuronalen Netzwerk, vollständig verbund
 
 Das Convolutional Neural Network wurde mit der Open Source Library Tensorflow implementiert.
 
-Die Position der Bauteile ist bereits bekannt. Die davor erstellten Bounding Boxen werden aus dem Binärbild ausgeschnitten und auf eine Größe von 32x32 Pixel skaliert. Die einzelnen Pixelwerte des Bildes werden davor noch durch 255 dividiert damit jeder Wert zwischen 0 und 1 liegt. Jedes davor gefundene Bauteil wird so klassifiziert.
+Die Position der Bauteile ist bereits bekannt. Die davor erstellten Bounding Boxen werden aus dem Binärbild ausgeschnitten und auf eine Größe von 32x32 Pixel skaliert. Durch das skalieren des Bildausschnittes ergeben sich für einzelne Pixel auch andere Werte wie 0 oder 255, es handelt sich daher um ein Graustufenbild und kein Binärbild. Die einzelnen Pixelwerte des Bildausschnittes werden davor noch durch 255 dividiert damit jeder Wert zwischen 0 und 1 liegt. Jedes davor gefundene Bauteil wird so mithilfe des Convolutional Neural Networks klassifiziert.
 
 ![Fully Connected Layer](.\Dateien\box.png){width=70%}
 

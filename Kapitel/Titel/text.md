@@ -17,11 +17,11 @@
 &nbsp;\
 
 \begin{center}
-    \huge{\textbf{DIPLOMARBEIT}} \
+    \huge{\textbf{DIPLOMARBEIT}} 
 
-    \normalsize{Gesamtprojekt}
+    \normalsize{Gesamtprojekt} 
 
-    \huge{\textbf{Smarter Circuits - Entwicklung einer Handschrifterkennung für elektronische Schaltungen.}} \
+    \huge{\textbf{Smarter Circuits - Entwicklung einer Handschrifterkennung für elektronische Schaltungen.}} 
 \end{center}
 &nbsp;\
 &nbsp;\
@@ -30,7 +30,7 @@
 &nbsp;\
 \begin{center}
     \begin{tabular}{lll}
-        Markus Mayrhofer-Reinhardshuber & 5BHEL & Betreuer: Prof. Dipl.-Ing. Gerfried Susani\\
+        Markus Mayrhofer-Reinhartshuber & 5BHEL & Betreuer: Prof. Dipl.-Ing. Gerfried Susani\\
          & & \\
         Christoph Weberbauer & 5BHEL & Betreuer: Prof. Dipl.-Ing. Gerfried Susani\\
     \end{tabular}

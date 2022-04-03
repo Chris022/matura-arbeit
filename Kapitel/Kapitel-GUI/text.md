@@ -13,6 +13,7 @@ Bei jedem Bild kann der Benutzer selbst gewisse Werte für den Alogrithmus verä
 ## Umsetzung
 
 Die GUI ist in verschidene Abschnitte unterteilt.
+
 * Bild öffnen
 * Bild zuschneiden
 * Binärbild erstellen
@@ -55,6 +56,8 @@ Da die erste Möglichkeit einfacher und schneller zu benutzen ist und bei einem 
 
 ![Binärbild erstellen](.\Dateien\SimpleThreshold2.png){width=80%}
 
+\newpage
+
 Die zweite Funktion "adaptiveThreshold" benutzt für jede Bildregion einen anderen Schwellenwert der von der Beleuchtung in dem jeweiligen Bereich abhängt. Dadurch ist es auch möglich bei ungleichmäßig ausgeleuchteten Bildern ein Binärbild zu erstellen.
 Mit dem dritten und vierten Schieberegler "Block size" und "Constant" können die beiden Parameter für diese Funktion verändert werden.
 "Block size" gibt dabei an, wie viele Nachbarpixel zur berechnung des Schwellenwertes verwendet werden.
@@ -65,6 +68,7 @@ Mit dem dritten und vierten Schieberegler "Block size" und "Constant" können di
 
 Mit dem Knopf "Reset" kann das Bild wieder auf das Ausgangsbild zurückgesetzt werden.
 
+\newpage
 
 ### Bild in Schaltung umwandeln
 

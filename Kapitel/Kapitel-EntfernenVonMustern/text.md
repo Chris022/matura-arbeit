@@ -2,7 +2,7 @@
 
 ## Problem
 
-Damit das Bild in eine Schaltung umgewandelt werden kann, darf es bestimmte Muster in dem Bild der Schaltung nicht geben, da es bei diesen bei der weiteren Verarbeitung der Schaltung zu Fehlern kommen würde.
+Damit das Bild in eine Schaltung umgewandelt werden kann, darf es bestimmte Muster in dem Bild der Schaltung nicht geben, da es bei diesen bei der weiteren Verarbeitung der Schaltung zu Fehlern kommen würde. Zu welchen Fehlern diese Mustern führen würden, wird im Kapitel "Umwandeln der Schaltung in eine Graph Datenstruktur" erklärt.
 
 ![Beispiel eines zu Entfernendes Muster](.\Dateien\MusterUndErsatz.png){width=60%} 
 

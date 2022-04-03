@@ -16,6 +16,8 @@ Diese Algorithmus funktiuoniert jedoch bei Spulen nicht, da diese für den Algor
 
 ![Problem bei Spulen](.\Dateien\problemSpulen.png){width=100%}
 
+\newpage
+
 ### Lösung für Spulen
 
 Um zu verhindern dass Spulen entfernt werden, werden zuerst die schwarzen Flächen in den Spulen entfernt. Spulen haben somit die gleiche Struktur wie Widerstände und können in eine ein Pixel breite Linie umgewandelt werden.
@@ -37,6 +39,8 @@ Beispiel einer Linie welche in der rot makierten Spalte drei Pixel breit ist.
 Als durchschnittliche Liniendicke wird der Wert gewählt, welcher bei den in der Liste gespeicherten Breiten am häufigsten auftritt.
 
 
+\newpage
+
 ### Beispiel der Funktion Erode
 
 Um Spulen zu entfernen wird die Funktion "erode" aus der Library OpenCV verwendet. Dabei wird eine Filtermaske über ein Bild geschoben. Ein Pixel im Originalbild bleibt nur dann weiß, wenn alle Pixel unter dem Filter weiß sind.
@@ -51,6 +55,8 @@ Wird der Filter einen Pixel weiter nach rechts bewegt, sind alle Pixel unter dem
 
 Damit ist es möglich, dicke Linien dünner zu machen, sowie dünne Linien zu entfernen.
 
+\newpage
+
 ### Entfernen von Spulen
 
 Wird nun das binäre Bild invertiert und diese Funktion mit einer Filtergröße von der dreifachen zuvor ausgerechneten Liniendicke angewandt, bleibt nur noch die Spule zurück. 
@@ -61,9 +67,10 @@ Danach wird die Differenz zwischen dem Invertiertend Binärbild und dem "Erosion
 
 ![Differenz zwischen den beiden Bildern](.\Dateien\spuleWeg.png){width=100%}
 
+\newpage
 
 ### Umwandeln des Bildes
 
 Um alle Linien in eine Breite von einem Pixel umzuwandeln, wird die Funktion "ximgproc.thinning" aus der Library OpenCV verwendet. Diese liefert als Rückgabewert das konvertierte Bild.
 
-![Bild mit einer Linienbreite von einem Pixel](.\Dateien\thinn.png){width=80%}
+![Bild mit einer Linienbreite von einem Pixel](.\Dateien\thinn.png){width=75%}
