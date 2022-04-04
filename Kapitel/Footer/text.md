@@ -13,7 +13,7 @@ Es können die folgenden fünf verschiedene Bauteile in einer Schaltung erkannt 
 * Kondensator
 * Spule
 
-
+Durch den modularen Aufbau des Programms können jedoch problemlos in Zukunft noch weitere Bauteile hinzugefügt werden.
 
 
 \newpage
