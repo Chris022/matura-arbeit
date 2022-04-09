@@ -1,0 +1,11 @@
+Logo, Name
+Ausgansbild
+Binär bild
+Graphen
+Suchen in Graph Muster + Graph
+Bounding boxen
+Fertige Schaltung
+LTspice XVII
+
+Python Logo
+NN
