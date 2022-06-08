@@ -69,5 +69,5 @@ und die den benutzten Quellen wörtlich und inhaltlich entnommenen Stellen als s
 kenntlich gemacht habe.
 
 \begin{center}
-\includegraphics[width=\linewidth]{./Dateien-Titel/Erklärung.PNG}
+\includegraphics[width=\linewidth]{./Dateien-Titel/ErklärungOhneUnterschrift.PNG}
 \end{center}
