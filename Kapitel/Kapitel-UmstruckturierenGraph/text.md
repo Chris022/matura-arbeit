@@ -23,7 +23,7 @@ Mithilfe eines rekursiven Algorithmus, welcher nacheinander alle Bauteile besuch
 
 ## Umsetzung
 ### Konvertierung der Koordinaten
-Zuerst werden die Bauteilinformationen wie Rotation, Art des Bauteils und Bauteil-Vertices genutzt, um die durchschnittliche Länge der gezeichneten Widerstände zu ermitteln. Dann werden alle Koordinaten, sowohl X als auch Y durch diese Länge dividiert und mit der Länge des Widerstandes im Simulatoren-Programm(=80) multipliziert.
+Zuerst werden die Bauteilinformationen wie Rotation, Art des Bauteils und Bauteil-Vertices genutzt, um die durchschnittliche Länge der gezeichneten Widerstände zu ermitteln. Dann werden alle Koordinaten, sowohl X als auch Y durch diese Länge dividiert und mit der Länge des Widerstandes im Simulatoren-Programm (=80) multipliziert.
 
 ### Umstrukturieren des Graphen
 Für jedes vom vorherigen Schritt gefundenes Bauteil wird ein neuer, grüner Vertex in den Graphen eingefügt.
@@ -40,7 +40,7 @@ Dann werden für die Verbindungen zwischen den Bauteilen noch neue Verbindungs-V
 
 
 ### Bauteile gerade richten
-Zum geraderichten der Bauteile wird bei einem belibigen Vertex begonnen und dessen Nachbarn besucht. Anschließend werden die Koordinaten der Nachbarn mit den Koordinaten des gerade besuchten Vertex verglichen.
+Zum Geraderichten der Bauteile wird bei einem belibigen Vertex begonnen und dessen Nachbarn besucht. Anschließend werden die Koordinaten der Nachbarn mit den Koordinaten des gerade besuchten Vertex verglichen.
 $$
     dX = X1 - X2
 $$
@@ -53,6 +53,6 @@ Ist hingengen $dY$ größer wird die X Koordinate des Nachbars gleich der X Koor
 
 ![dY ist kleiner und wird somit zu 0 gemacht](.\Dateien\GeradeRichten.png){width=40%}
 
-Wiederhole dies für alle Nachbarn bis alle Vertices einmal besucht wurden.
+Wiederhole dies für alle Nachbarn, bis alle Vertices einmal besucht wurden.
 
 \newpage

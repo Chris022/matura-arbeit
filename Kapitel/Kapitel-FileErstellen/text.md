@@ -65,7 +65,7 @@ Durch diese Information können dann gleiche Nummern zusammen geordnet, die Ansc
 
 \newpage
 
----
+
 
 Dann muss für jeden Bauteil-Vertex der jeweilige Code (siehe zuvor), welcher ein Bauteil in LT-Spice beschreibt, in ein Output-File eingefügt werden. Die Koordinaten entsprechen dabei den in dem Vertex gespeicherten.
 
@@ -81,7 +81,7 @@ Für jeden Verbindungs-Vertex, wird ein WIRE LT-Spice Code in das Output-File hi
 
 ![Beispiel für eine problematische Schaltung](.\Dateien\Problem1.png){width=40%}
 
-Treffen zwei Bauteile direkt aufeinander wurde dies einen solchen Graphen erzeugen.
+Treffen zwei Bauteile direkt aufeinander, würde dies einen solchen Graphen erzeugen.
 
 ![Graph für eine Schaltung mit zwei Bauteilen direkt nebeneinander](.\Dateien\Problem2.png){width=40%}
 
@@ -89,7 +89,7 @@ Mit der Beschreibung von oben hätte eine solche Schaltung jedoch keine Verbindu
 
 **Lösung:**
 
-Sollte einer der Vertices mit denen ein Bauteil verbunden ist, ein weiterer Bauteil-Vertex sein, wird ein WIRE vom Anschluss des Bauteils bis zur Mitte, zwischen den beiden Bauteilen eingefügt!
+Sollte einer der Vertices, mit denen ein Bauteil verbunden ist, ein weiterer Bauteil-Vertex sein, wird ein WIRE vom Anschluss des Bauteils bis zur Mitte, zwischen den beiden Bauteilen eingefügt!
 
 ![Einfügen eines WIREs vom Anschluss des Bauteils bis zur Mitte](.\Dateien\Lösung1.png){width=40%}
 

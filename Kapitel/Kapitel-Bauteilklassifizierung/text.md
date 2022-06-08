@@ -20,11 +20,11 @@ Ein Neuronales Netzwerk ist ein Algorithmus, der dem menschlichen Gehirn nachemp
 
 ### Aufbau
 
-Ein Neuronales Netzwerk besteht aus Neuronen, die in mehreren Schichten (Layer) angeordnet sind. Jedes Netzwerk hat am Anfang einen Input Layer sowie am Ende einen Output Layer. Zwischen diesen beiden Layers können einer oder mehrere Hidden Layer liegen.
+Ein Neuronales Netzwerk besteht aus Neuronen, die in mehreren Schichten (Layer) angeordnet sind. Jedes Netzwerk hat am Anfang einen Input Layer sowie am Ende einen Output Layer. Zwischen diesen beiden Layers können ein oder mehrere Hidden Layer liegen.
 
 ![Struktur eines Neuronalen Netzwerkes](.\Dateien\aufbauNN.png){width=70%}
 
-Jedes Neuron enthält eine Nummer, auch Aktivierung genannt.
+Jedes Neuron enthält eine Zahl, auch Aktivierung genannt.
 
 Um Bauteile einer Schaltung zu erkennen, würde die Aktivierung der Neuronen im Input Layer jeweils der Pixelwert eines Bildes sein.
 
@@ -66,7 +66,7 @@ Dies wird für alle Trainingsdaten so lange wiederholt, bis die Ausgabe des Netz
 
 ## Convolutional Neural Network
 
-Ein Convolutional Neural Network besitzt im Gegensatz zu einem Neuronalen Netzwerk mehr verschiedene Layer, welche sich besser eignen um Informationen aus einem Bild zu extrahieren.
+Ein Convolutional Neural Network besitzt im Gegensatz zu einem Neuronalen Netzwerk mehr verschiedene Layer, welche sich besser eignen, um Informationen aus einem Bild zu extrahieren.
 
 
 ### Filter
@@ -92,7 +92,7 @@ Ein Convolutional Layer besteht meist aus mehreren Filtern, die eine Vielzahl an
 ### Pooling Layer
 
 Ein weiterer Layer ist der Pooling Layer. Um die Größe der Feature maps zu reduzieren, werden Pooling Layer verwendet. 
-Dadurch besitzt das Netzwerk weniger Parameter die erlernt werden müssen, wodurch der Rechenaufwand und somit die Zeit um ein Netzwerk zu trainieren reduziert wird.
+Dadurch besitzt das Netzwerk weniger Parameter die erlernt werden müssen, wodurch der Rechenaufwand und somit die Zeit um ein Netzwerk zu trainieren, reduziert wird.
 
 Ein Beispiel für einen Pooling Layer ist Max Pooling.
 

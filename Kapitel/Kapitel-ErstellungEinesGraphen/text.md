@@ -75,10 +75,10 @@ Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher dem Graphen hinzugef
 **Prüfe**, ob der gerade besuchte Pixel als *besucht* makiert ist und es sich somit um das Ende einer Schleife handelt. \
 &nbsp;&nbsp;&nbsp;Wenn Ja: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Finde** den im Graphen eingefügen Vertex, welcher zu dem gerade besuchten Pixel gehört. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellten Vertex und **schließe** somit die Schleife. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Verbinde** diesen mit dem zuletzt erstellten Vertex und **beende** somit die Schleife. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Beende** diesen Ast der Rekursion = **Return** \
 **Makiere** den gerade besuchten Pixel als besucht. \
-**Finde** alle benachbarten Pixel, des gerade besuchten, die nicht der zuletzt besuchte Pixel sind \
+**Finde** alle benachbarten Pixel des gerade besuchten, die nicht das zuletzt besuchte Pixel sind \
 **Prüfe** die Anzahl der Nachbarn \
 &nbsp;&nbsp;&nbsp; Bei 0 Nachbarn: \
 &nbsp;&nbsp;&nbsp;\colorbox{blue!30}{|}&nbsp;&nbsp; _Es handelt sich um einen Endpunkt._ \
@@ -107,15 +107,15 @@ Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher dem Graphen hinzugef
 
 \newpage
 
-**Wichtig**: Basierend auf diesen Algorithmus kann man auch erkennen wieso der Schritt, beschrieben im Kapitel "Entfernen von Mustern" ist nötig ist. Ohne dem Schritt würden im Bild noch Muster wie dieses vorkommen.
+**Wichtig**: Basierend auf diesen Algorithmus kann man auch erkennen, wieso der Schritt, beschrieben im Kapitel "Entfernen von Mustern" nötig ist. Ohne dem Schritt würden im Bild noch Muster wie dieses vorkommen.
 
 ![Problem ohne dem Entfernen von Mustern - Bild ohne diesen Schritt](.\Dateien\ProblemMitEcken1){width=15%}
 
-![Problem ohne dem Entfernen von Mustern - Problematischer Pixel](.\Dateien\ProblemMitEcken2){width=15%}
+![Problem ohne dem Entfernen von Mustern - Problematisches Pixel](.\Dateien\ProblemMitEcken2){width=15%}
 
 ![Problem ohne dem Entfernen von Mustern - Nachbarn](.\Dateien\ProblemMitEcken3){width=15%}
 
-Betrachtet man hier den rot markierten Pixel, so sieht man, dass dieser mehr als nur einen Nachbar hatt und somit vom Algorithmus als Verzweigung erkannt werden würde.
+Betrachtet man hier das rot markierte Pixel, so sieht man, dass dieses mehr als nur einen Nachbar hat und somit vom Algorithmus als Verzweigung erkannt werden würde.
 
 Im Graphen würde dies viele "Schleifen" erzeugen.
 

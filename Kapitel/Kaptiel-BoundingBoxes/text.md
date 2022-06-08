@@ -4,7 +4,7 @@
 Damit später die Bauteile in ein Simulationsprogramm eingefügt werden können, muss als erstes die Position der Bauteile innerhalb der Schaltung gefunden werden.
 
 ## Idee
-In dem Graph soll nach bestimmten Mustern, welche ein Bauteil darstellen, gesucht werden. Dadurch, dass man von jedem Knotenpunkt weiß, wo im Originalbild dieser liegt, kann so dann die Position des jeweiligen Bauteils gefunden werden.
+In dem Graph soll nach bestimmten Mustern, welche ein Bauteil darstellen, gesucht werden. Dadurch, dass man von jedem Knotenpunkt weiß, wo dieser im Originalbild liegt, kann so die Position des jeweiligen Bauteils gefunden werden.
 
 ## Umsetzung
 
@@ -29,7 +29,7 @@ Im Falle eines Kondensators wird geprüft, ob zwei Ground Symbole direkt gegenü
 
 Würden die Ground Symbole jedoch lediglich verbunden werden, ergäbe sich ein weiteres Problem. Sind zwei Kondensatoren direkt nebeneinander palziert, würden drei anstelle von den gewollten zwei Kondensatoren gefunden werden.
 
-![Problem beim plazieren von zwei Kondensatoren nacheinander - Problem](.\Dateien\ProblemMit2Kond-1.png){width=50%}
+![Problem beim Plazieren von zwei Kondensatoren nacheinander - Problem](.\Dateien\ProblemMit2Kond-1.png){width=50%}
 
 Behoben wird dies, indem die zwei Ground Muster nicht durch eine schwarze Edge, sondern duch eine farbige, hier grüne Edge verbunden werden.
 
@@ -39,4 +39,4 @@ Behoben wird dies, indem die zwei Ground Muster nicht durch eine schwarze Edge, 
 
 Dadurch werden dann nur mehr zwei Kondensatoren gefunden.
 
-![Problem beim plazieren von zwei Kondensatoren nacheinander - Lösung](.\Dateien\ProblemMit2Kond-2.png){width=50%}
+![Problem beim Plazieren von zwei Kondensatoren nacheinander - Lösung](.\Dateien\ProblemMit2Kond-2.png){width=50%}

@@ -95,7 +95,7 @@ Als Lösung wurde eine eigene Bibliothek entwickelt, welche die Probleme von iGr
 
 **Implementierung:**
 
-Im Hintergrund wird ein Graph mithilfe einer Inzidenzmatrix gespeichert. Zusätzlich ist jeder Vertex und jede Edge als Objekt in je einer Vertex bzw. Edge-Liste gespeichert. Der jeweilige Index in der Liste korrespondiert mit der jeweiligen Spalte oder Reihe.
+Im Hintergrund wird ein Graph mithilfe einer Inzidenzmatrix gespeichert. Zusätzlich ist jeder Vertex und jede Edge als Objekt in je einer Vertex- bzw. Edge-Liste gespeichert. Der jeweilige Index in der Liste korrespondiert mit der jeweiligen Spalte oder Reihe.
 
 \newpage
 
@@ -124,7 +124,7 @@ dann einfach alle Permutationen mit |V_N| Vertices  im Graphen H generiert.
 
 ![Graphische Darstellung des Beispiels](.\Dateien\GrundkonzeptUlmans.png){width=50%}
 
-Diese Erklärung ist stark verenfacht und in Wirklichkeit werden auch keine Permutationen sondern Zurodnungs-Matrizen generiert, trotzdem ist das Beispiel zur Erklärung des Grundkonzeptes sehr gut geeignet. Im folgenden wird der Algorithmus noch  genauer erklärt.
+Diese Erklärung ist stark vereinfacht und in Wirklichkeit werden auch keine Permutationen sondern Zurodnungs-Matrizen generiert, trotzdem ist das Beispiel zur Erklärung des Grundkonzeptes sehr gut geeignet. Im folgenden wird der Algorithmus noch  genauer erklärt.
 
 \newpage
 
@@ -294,7 +294,7 @@ Dieser Schritt erlaubt es, einige Zuordnungen dirket auszuschließen, wodurch ei
 
 Grundsätzlich gilt also, je früher eine Zuordung ausgeschlossen werden kann, desto performanter wird der Algorithmus.
 
-**Wiederhole** solange bis die Matrix nicht mehr veränder wurde. \
+**Wiederhole** solange bis die Matrix nicht mehr verändert wurde. \
 &nbsp;&nbsp;&nbsp; **Wiederhole** für jeden Vertex im "Muster-Graph" \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Suche** den zugeordneten Vertex im anderen Graphen \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Finde** die Nachbarn beider Vertices \
@@ -314,4 +314,4 @@ Grundsätzlich gilt also, je früher eine Zuordung ausgeschlossen werden kann, d
 
 ![Suche die Nachbarn für beide Vertices. (hier grau)](.\Dateien\Vereinfachung2.png){width=60%}
 
-![H3 kann auf "N3" zugeordnet werden. Also ein Nachbar von "H2" kann auf einen Nachbar von "N1" zugeordnet werden. Somit ist die Zuordnung von "H2" auf "N1" grundsetzlich möglich und es kann keine Vereinfachung getroffen werden.](.\Dateien\Vereinfachung3.png){width=60%}
+![H3 kann auf "N3" zugeordnet werden, also ein Nachbar von "H2" kann auf einen Nachbar von "N1" zugeordnet werden. Somit ist die Zuordnung von "H2" auf "N1" grundsätzlich möglich und es kann keine Vereinfachung getroffen werden.](.\Dateien\Vereinfachung3.png){width=60%}

@@ -51,7 +51,7 @@ Unter dem 3x3 Filter sind schwarze und weiße Pixel, somit wird das Pixel im Zen
 
 ![Funktion "erode" mit 3x3 Filter Beispiel 2](.\Dateien\erode2.png){width=60%}
 
-Wird der Filter einen Pixel weiter nach rechts bewegt, sind alle Pixel unter dem Filter weiß, das Pixel bleibt somit weiß.
+Wird der Filter ein Pixel weiter nach rechts bewegt, sind alle Pixel unter dem Filter weiß, das Pixel bleibt somit weiß.
 
 Damit ist es möglich, dicke Linien dünner zu machen, sowie dünne Linien zu entfernen.
 
