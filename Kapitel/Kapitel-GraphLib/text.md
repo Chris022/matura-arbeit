@@ -46,7 +46,6 @@ Wichtig hierbei ist, dass eine Zuordnung sowohl "möglich" also auch "unmöglich
 ## Problem
 Die gesamte elektronische Schaltung soll später mithilfe eines Graphen dargestellt werden. Dafür muss eine Möglichkeit geschaffen werden, sehr einfach Graphen zu erstellen und diese weiter zu verarbeiten.
 
-\newpage
 
 ## Idee
 Umgesetzt werden sollte dies durch das Erstellen bzw. Finden einer einfachen Bibliothek zur Graphenverarbeitung.
@@ -72,6 +71,8 @@ Diese Bibliothek muss mindestens folgende Funktionen bieten:
 ![\label{zwischenVertices}Zwischenvertices](.\Dateien\VertexZwischeneinfügen.png){width=40%} 
 
 ![\label{musterFinden}Muster finden](.\Dateien\MusterFinden.png){width=70%}
+
+\newpage
 
 ## Umsetzung
 
