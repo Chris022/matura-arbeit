@@ -18,6 +18,12 @@ Durch den modularen Aufbau des Programms können jedoch problemlos in Zukunft no
 
 \newpage
 
+# Literaturverzeichnis
+
+Adrian Neumann (kein Datum): Ullman’s Subgraph Isomorphism Algorithm. Abgerufen am 12.01.2022 von <a href="https://adriann.github.io/Ullman%20subgraph%20isomorphism.html">https://adriann.github.io/Ullman%20subgraph%20isomorphism.html</a>
+
+\newpage
+
 \clearpage
 # Abbildungsverzeichnis 
 \listoffigures
