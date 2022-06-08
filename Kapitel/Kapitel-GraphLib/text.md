@@ -181,6 +181,8 @@ In diesem Beispiel soll überprüft werden, ob die Zuordnung von Vertex "1N" auf
 
 ![Alle Verbindungen nach "H1" werden ausgetauscht mit Verbindungen nach Zuordnung("H1") = "N1".](.\Dateien\isValidSumgraph1.png){width=50%}
 
+\newpage 
+
 **Schritt 2**
 
 ![Alle Verbinungen nach "H2" werden mit Verbindungen nach Zuordnung("H2") = Keine](.\Dateien\isValidSumgraph2.png){width=50%}

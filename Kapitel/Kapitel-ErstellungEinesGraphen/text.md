@@ -10,6 +10,8 @@ Ein Richtungs-Gradient ist ein Konstrukt, welches eine Liste von besuchten Koord
 ## Problem
 Für eine leichtere Verarbeitung soll das Bild der Schaltung in eine Datenstruktur umgewandelt werden. Da ein Graph die in dem Bild der Schaltung enthaltene Information sehr gut speichert, wurde diese Datenstruktur gewählt
 
+\newpage
+
 ## Idee
 Mithilfe eines rekursiven Algorithmus sollen die schwarzen Pixel in der Schaltung Pixel für Pixel verfolgt werden.
 
