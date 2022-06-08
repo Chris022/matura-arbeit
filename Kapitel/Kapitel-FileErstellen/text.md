@@ -63,13 +63,13 @@ Durch diese Information können dann gleiche Nummern zusammen geordnet, die Ansc
 
 ![Graph mit Verbindungen gespeichert.](.\Dateien\ConnectionMap.png){width=40%}
 
-\newpage
-
 
 
 Dann muss für jeden Bauteil-Vertex der jeweilige Code (siehe zuvor), welcher ein Bauteil in LT-Spice beschreibt, in ein Output-File eingefügt werden. Die Koordinaten entsprechen dabei den in dem Vertex gespeicherten.
 
 ![Widerstand wird als Text in das Output-File gespeichert](.\Dateien\LT-SpicePicture1.png){width=40%}
+
+\newpage
 
 Für jeden Verbindungs-Vertex, wird ein WIRE LT-Spice Code in das Output-File hinzugefügt.
 

@@ -31,7 +31,7 @@ out = open("chache/combined.md","w")
 out.write(wholeMarkdown)
 out.close()
 
-createLatex = "pandoc chache/combined.md -f markdown -t latex -s -o chache/out.tex --listings"
+createLatex = "pandoc chache/combined.md -f markdown -t latex -s -o chache/out.tex --listings -V papersize:a4"
 os.system(createLatex)
 
 

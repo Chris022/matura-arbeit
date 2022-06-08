@@ -38,6 +38,7 @@ Dann werden für die Verbindungen zwischen den Bauteilen noch neue Verbindungs-V
 
 ![Einfügen von Verbindungs-Vertices](.\Dateien\Umstruckturierung4.png){width=50%}
 
+\newpage
 
 ### Bauteile gerade richten
 Zum Geraderichten der Bauteile wird bei einem belibigen Vertex begonnen und dessen Nachbarn besucht. Anschließend werden die Koordinaten der Nachbarn mit den Koordinaten des gerade besuchten Vertex verglichen.
