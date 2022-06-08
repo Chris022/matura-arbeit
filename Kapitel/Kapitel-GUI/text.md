@@ -28,6 +28,8 @@ Wird das Programm gestartet, muss man zuerst ein Bild öffnen.
 
 ![Bild öffnen](.\Dateien\OpenFile.png){width=80%}
 
+\newpage
+
 Wird der Knopf "Open File" gedrückt, öffnet sich in einem neuen Fenster der File Explorer. In diesem kann der PC nach einem Bild durchsucht werden. Mit dem Knopf "Open" wird das gewünschte Bild ausgewählt.
 
 ![Bild im File Explorer auswählen](.\Dateien\FileExplorer.png){width=80%}
@@ -37,6 +39,8 @@ Wird der Knopf "Open File" gedrückt, öffnet sich in einem neuen Fenster der Fi
 Das ausgewählte Bild wird jetzt im Programm angezeigt und kann noch zugeschnitten werden, damit auf dem Bild nur noch die Schaltung zu sehen ist. Dafür wird mit der Maus auf einen Punkt geklickt und mit gedrückter Maustaste die Maus zu einem zweiten Punkt bewegt. Das dadurch entstehende Rechteck zeigt den Teil des Bildes, welcher ausgeschnitten wird. Der restliche Teil des Bildes wird ausgegraut dargestellt.
 
 ![Bild zuschneiden](.\Dateien\CropImage2.png){width=80%}
+
+\newpage
 
 ### Binärbild erstellen
 

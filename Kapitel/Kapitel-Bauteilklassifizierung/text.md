@@ -24,6 +24,8 @@ Ein Neuronales Netzwerk besteht aus Neuronen, die in mehreren Schichten (Layer) 
 
 ![Struktur eines Neuronalen Netzwerkes](.\Dateien\aufbauNN.png){width=70%}
 
+\newpage
+
 Jedes Neuron enthält eine Zahl, auch Aktivierung genannt.
 
 Um Bauteile einer Schaltung zu erkennen, würde die Aktivierung der Neuronen im Input Layer jeweils der Pixelwert eines Bildes sein.
