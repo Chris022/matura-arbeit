@@ -193,11 +193,12 @@ In diesem Beispiel soll überprüft werden, ob die Zuordnung von Vertex "1N" auf
 
 ![Alle Verbinungen nach "H4" werden mit Verbindungen nach Zuordnung("H4") = Keine](.\Dateien\isValidSumgraph4.png){width=50%}
 
-\newpage
 
 **Schritt 5**
 
 ![Alle Vertices die nicht in N vorkommen werden entfernt](.\Dateien\isValidSumgraph5.png){width=35%}
+
+\newpage
 
 **Schritt 6**
 

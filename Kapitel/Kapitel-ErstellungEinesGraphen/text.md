@@ -103,7 +103,7 @@ Wichtig zu erwähnen ist es, dass bei jedem Knoten, welcher dem Graphen hinzugef
 &nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Rufe** die Subroutine für den Nachbar-Pixel erneut auf \
 &nbsp;&nbsp;&nbsp;\colorbox{red!30}{|}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wobei der zuletzt besuchte Vertex der gerade erstellte ist \
 
-![Grobes Blockschaltbild der "Recursive" Subroutine](.\Dateien\AlgorithmusBlockschaltbild.png){width=70%}
+![Grobes Blockschaltbild der "Recursive" Subroutine](.\Dateien\AlgorithmusBlockschaltbild.png){width=90%}
 
 \newpage
 
