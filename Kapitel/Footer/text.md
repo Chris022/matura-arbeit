@@ -21,6 +21,9 @@ Durch den modularen Aufbau des Programms können jedoch problemlos in Zukunft no
 # Literaturverzeichnis
 
 Adrian Neumann (kein Datum): Ullman’s Subgraph Isomorphism Algorithm. Abgerufen am 12.01.2022 von <a href="https://adriann.github.io/Ullman%20subgraph%20isomorphism.html">https://adriann.github.io/Ullman%20subgraph%20isomorphism.html</a>
+Dokumentation OpenCV (kein Datum). Abgerufen am 20.10.2021 von <a href="https://docs.opencv.org/4.x/">https://docs.opencv.org/4.x/</a>
+Dokumentation Tensorflow (kein Datum). Abgerufen am 10.11.2021 von <a href="https://www.tensorflow.org/api_docs">https://www.tensorflow.org/api_docs</a>
+Dokumentation NumPy (kein Datum). Abgerufen am 26.10.2021 von <a href="https://numpy.org/doc/stable/index.html#">https://numpy.org/doc/stable/index.html#</a>
 
 \newpage
 
